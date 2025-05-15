@@ -1,28 +1,39 @@
 import React from "react";
 import SectionTag from "./common/SectionTag";
+import Image from "next/image";
 
 const Hero = () => {
-  const heading =
-    "text-[36px] md:text-[45px] lg:text-[55px] xl:text-[64px] font-geist font-medium  text-transparent bg-clip-text bg-gradient-to-r from-[#F0A9D3] via-[#F9DEE3] to-[#9691F2] pt-8 mx-auto max-w-[1000px] ";
-  const para =
-    "text-base lg:text-xl font-medium text-[#D8DFF0] opacity-80 pt-6 max-w-[550px] lg:max-w-[700px] mx-auto";
+  const heading = "common_heading";
+  const para = "common_para max-w-[550px] lg:max-w-[700px]";
   return (
     <>
-      <div className="pt-16 md:pt-20 lg:pt-24 relative px-4 md:px-5 lg:px-0 ">
+      <div
+        className="pt-16 md:pt-16 lg:pt-24 relative container flex flex-col 
+       items-center"
+      >
         <SectionTag
           title="Welcome to Moviegen new version"
           emoji="/images/png/start-emoji.png"
         />
-        <div className="text-center ">
+        <div className="text-center">
           <div className={heading}>
             <h1>New Era of Edit Videos With AI. </h1>
-            <h2 className="text-[#E1E7F5]">No Software, Just Prompt.</h2>
+            <h2 className="text-[#E1E7F5]  md:pt-4">
+              No Software, Just Prompt.
+            </h2>
           </div>
           <p className={para}>
             MovieGen turns your words into perfectly cut footage no downloads,
             timelines, or plug-ins required.
           </p>
         </div>
+        <Image
+          className="pt-10 md:pt-14 lg:pt-16"
+          width="1020"
+          height="620"
+          src="/images/svg/hero-video-editor.svg"
+          alt="video-editor"
+        />
       </div>
     </>
   );
