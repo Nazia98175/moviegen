@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import MobileHeader from "./MobileHeader";
 import Image from "next/image";
 import { HamburgerIcon } from "./common/Icons";
@@ -12,7 +12,7 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
   const className =
-    "text-white pb-0.5 font-medium text-base lg:text-lg xl:text-xl 4xl:text-2xl hover:text-secondary transition-all ease-in-out relative after:absolute after:left-0 after:bottom-0 after:w-0 after:hover:w-full after:h-0.5 after:bg-secondary after:duration-300 duration-300";
+    "pb-0.5 font-medium  text-base lg:text-lg flex gap-x-2 text-graya7 transition-all ease-in-out relative after:absolute after:left-0 after:bottom-0 after:w-0 after:hover:w-full after:h-0.5 after:bg-graya7 after:duration-300 duration-300 cursor-pointer font-geist";
   useEffect(() => {
     const html = document.documentElement;
     if (isOpen) {
@@ -27,41 +27,117 @@ const Header = () => {
       html.style.height = "";
     }
   }, [isOpen]);
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setOpenDropdown(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
-      <div className="relative z-50 py-3 sm:py-5 xl:py-10 max-w-[1150px] 2xl:max-w-[1310px] 3xl:max-w-[1406px] 4xl:max-w-[1536px] px-4 md:px-5 xl:px-0 mx-auto">
-        <div className="flex justify-between items-center">
-          <div className="flex justify-center gap-x-[52px] items-center">
-            <Link href="/">
-              <Image
-                unoptimized
-                className="max-w-[120px] lg:max-w-[140px] xl:max-w-full"
-                width="156"
-                height="48"
-                src="/images/svg/page-logo.svg"
-                alt="logo-image"
-              />
-            </Link>
-            <div className="hidden md:flex items-center gap-6 lg:gap-8 4xl:gap-14">
-              {navList.map((obj, index) => (
-                <Link key={index} href={obj.url} className={className}>
-                  {obj.title}
-                </Link>
-              ))}
-            </div>
-          </div>
-          <button className="p-2 bg-white">sign-in</button>
-          <button className="md:hidden" onClick={toggleOpen}>
-            <HamburgerIcon />
-          </button>
+      <div className="relative">
+        <Image
+          className="absolute left-0 top-0 z-0"
+          width="800"
+          height="756"
+          src="/images/png/blurrblob-head-left.png"
+          alt="blurr blob"
+        />
+        <Image
+          className="absolute right-0 top-0 z-0"
+          width="1176"
+          height="756"
+          src="/images/png/blurrblob-head-right.png"
+          alt="blurr blob"
+        />
+        <div className="relative z-50 py-3 sm:py-5 xl:py-10 container px-4 md:px-5 xl:px-0 mx-auto">
+          <div className="flex justify-between items-center">
+            <div className="flex justify-center gap-x-[52px] items-center">
+              <Link href="/">
+                <Image
+                  unoptimized
+                  className="max-w-[120px] lg:max-w-[140px] xl:max-w-full"
+                  width="156"
+                  height="48"
+                  src="/images/svg/page-logo.svg"
+                  alt="logo-image"
+                />
+              </Link>
+              <div className="hidden lg:flex items-center gap-6 lg:gap-8 4xl:gap-14">
+                {navList.map((obj, index) => (
+                  <div
+                    key={index}
+                    className="relative group cursor-pointer"
+                    ref={openDropdown === index ? dropdownRef : null} // Ref only on active dropdown
+                    onClick={() =>
+                      setOpenDropdown(openDropdown === index ? null : index)
+                    }
+                  >
+                    <button className={className}>
+                      {obj.title}{" "}
+                      {obj.submenu && (
+                        <Image
+                          unoptimized
+                          className="pt-0.5"
+                          width="10"
+                          height="10"
+                          src="/images/svg/dropdown-icon.svg"
+                          alt="logo-image"
+                        />
+                      )}
+                    </button>
 
-          <div
-            className={`fixed inset-0 bg-primary z-50 transition-transform duration-300 ${
-              isOpen ? "translate-y-0" : "-translate-y-full"
-            }`}
-          >
-            <MobileHeader toggleOpen={toggleOpen} />
+                    {obj.submenu && openDropdown === index && (
+                      <div className="absolute top-full left-0 mt-2 w-44 bg-grayd8 rounded shadow-lg z-50 cursor-pointer">
+                        {obj.submenu.map((item, i) => (
+                          <Link
+                            key={i}
+                            href={item.url}
+                            className="block px-4 py-2 text-sm text-white hover:bg-secondary"
+                          >
+                            {item.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="text-base font-medium font-geist bg-primary hover:shadow-[#a37ef229] border border-lightpurple44  p-1 rounded-[12px] cursor-pointer hidden lg:flex">
+              <button className="text-grayd8 px-5 cursor-pointer border-none">
+                Sign In
+              </button>
+              <button className="px-[18px] py-3.5 primary_gradient border border-white rounded-[8px] cursor-pointer">
+                Join Waitlist
+              </button>
+            </div>
+            <button className="lg:hidden" onClick={toggleOpen}>
+              <HamburgerIcon />
+            </button>
+
+            <div
+              className={`fixed inset-0 bg-primary z-50 transition-transform duration-300 ${
+                isOpen ? "translate-y-0" : "-translate-y-full"
+              }`}
+            >
+              <MobileHeader
+                setOpenDropdown={setOpenDropdown}
+                openDropdown={openDropdown}
+                dropdownRef={dropdownRef}
+                toggleOpen={toggleOpen}
+              />
+            </div>
           </div>
         </div>
       </div>

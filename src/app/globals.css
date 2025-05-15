@@ -1,4 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap");
 @import "tailwindcss";
+
 body {
-  background-color: #05060e !important;
+  background-color: #05050e !important;
+}
+
+@theme {
+  --color-primary: #0f0f27;
+  --color-secondary: #e1e7f5;
+  --color-blue0d: #0d0c0f;
+  --color-lightpurple44: #444362;
+  --color-graya7: #a7b1d6cc;
+  --color-grayd8: #d8dff0cc;
+
+  --font-geist: "Geist", sans-serif;
+  --font-suisseintl: "SuisseIntl", sans-serif;
+  --font-inter-tight: "Inter Tight", sans-serif;
+  --font-spline-sans-mono: "Spline Sans Mono", monospace;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: url("/public/fonts/SuisseIntl-Light.ttf") format("ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: url("/public/fonts/SuisseIntl-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: url("/public/fonts/SuisseIntl-Medium.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: url("/public/fonts/SuisseIntl-SemiBold.ttf") format("ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SuisseIntl";
+  src: url("/public/fonts/SuisseIntl-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+.ff_sussie {
+  font-family: "SuisseIntl";
+}
+.container {
+  @apply max-w-[1150px] min-[1440px]:max-w-[1200px] min-[1536px]:max-w-[1336px] min-[1920px]:max-w-[1720px];
+}
+.primary_gradient {
+  background: linear-gradient(to right, #f0a9d3 0%, #f9dee3 50%, #9691f2 100%);
 }

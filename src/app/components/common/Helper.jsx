@@ -1,7 +1,19 @@
 export const navList = [
   { title: "Home", url: "/" },
-  { title: "Explore", url: "/" }, // ← fixed here
-  { title: "Studios & Creators", url: "#studiocreator" },
-  { title: "How It Works", url: "#howitwork" },
+  {
+    title: "Product",
+    submenu: [
+      { title: "AI Editor", url: "/ai-editor" },
+      { title: "Video Tools", url: "/video-tools" },
+    ],
+  },
+  {
+    title: "Use Case",
+    submenu: [
+      { title: "For Creators", url: "/creators" },
+      { title: "For Teams", url: "/teams" },
+    ],
+  },
+  { title: "Pricing", url: "#howitwork" },
   { title: "Contact", url: "/sign-in" },
 ];
