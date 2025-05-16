@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import SectionTag from "./common/SectionTag";
 
 const testimonials = [
   {
@@ -27,16 +28,16 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const heading = "common_heading";
   return (
     <section className="bg-[#0B0B0F] py-20 text-white text-center px-4">
       <div className="max-w-5xl mx-auto">
-        <p className="text-sm text-[#8B5CF6] border border-[#8B5CF6] w-fit mx-auto px-4 py-1 rounded-full mb-4">
-          Trusted by Our Users
-        </p>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          What Our Users Are Saying
-        </h2>
-        <p className="text-gray-400 max-w-2xl mx-auto mb-12">
+        <div className={heading}>
+          <SectionTag title="Trusted by Our Users" tagclass="hidden" />
+
+          <h2 className="text-[#E1E7F5] md:pt-4">What Our Users Are Saying</h2>
+        </div>
+        <p className="text-[#D8DFF0]/80 max-w-2xl mx-auto mb-12 mt-4 max-w-[560px]">
           Lorem ipsum dolor sit amet consectetur. Etiam risus adipiscing etiam
           pellentesque. Lorem mauris convallis pretium imperdiet. At lorem.
         </p>
