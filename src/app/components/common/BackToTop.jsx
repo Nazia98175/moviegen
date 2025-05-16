@@ -33,7 +33,7 @@ const BackToTop = () => {
   return (
     <button
       onClick={scrollTopHandler}
-      className={`fixed bottom-[2%] right-[2%] z-40 b flex h-9 sm:h-10 w-9 sm:w-10 items-center bg-primary justify-center overflow-hidden rounded-full hover:shadow-orange-shadow transition-all duration-500  border border-white ${
+      className={`fixed bottom-[2%] md:bottom-[6.5%] right-[2%] z-40 b flex h-9 sm:h-10 w-9 sm:w-10 items-center bg-primary justify-center overflow-hidden rounded-full hover:shadow-orange-shadow transition-all duration-500  border border-white ${
         showScrollTop ? "scale-100" : "scale-0"
       }`}
     >

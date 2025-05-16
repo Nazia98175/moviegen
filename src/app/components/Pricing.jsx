@@ -171,6 +171,7 @@ const Pricing = () => {
                   width="320"
                   height="420"
                   src="/images/png/creator-card-blurr.png"
+                  alt="pricing-card"
                 />
                 <h3 className="text-grayd8 text-base md:text-lg lg:text-xl font-medium mb-2 text-gray-300 font-spline-sans-mono">
                   {plan.title}
@@ -201,6 +202,7 @@ const Pricing = () => {
                           width="18"
                           height="16"
                           src="/images/svg/pricing-star.svg"
+                          alt="pricing-star"
                         />
                       </span>{" "}
                       {feature}

@@ -6,6 +6,7 @@ import Pricing from "./components/Pricing";
 import Features from "./components/Features";
 import Footer from "./components/Footer";
 import Testimonials from "./components/Testimonials";
+import GetStarted from "./components/GetStarted";
 
 export default function Home() {
   return (
@@ -13,8 +14,9 @@ export default function Home() {
       <Hero />
       <VideoEditor />
       <Pricing />
-      <Features />
+      {/* <Features /> */}
       <Testimonials />
+      <GetStarted />
       <Footer />
       <BackToTop />
     </>
