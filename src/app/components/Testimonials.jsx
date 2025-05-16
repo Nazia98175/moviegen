@@ -166,8 +166,8 @@ const Testimonials = () => {
                 key={i}
                 className={`${
                   i === 4
-                    ? "w-10 h-10 p-2 flex items-center justify-center relative"
-                    : "w-6 h-6 flex items-center justify-center"
+                    ? "p-10 flex items-center justify-center relative"
+                    : "flex items-center justify-center"
                 } ${!showOnMobile ? "hidden md:flex" : ""}`}
               >
                 {i === 4 ? (
@@ -199,7 +199,7 @@ const Testimonials = () => {
                   </div>
                 ) : (
                   <div
-                    className="p-1 rounded-full border border-[#44436285] flex items-center justify-center"
+                    className="p-4 rounded-full border border-[#44436285] flex items-center justify-center"
                     style={{ boxShadow: "0px 0px 0px 1px #1B1A22" }}
                   >
                     <svg
@@ -208,7 +208,7 @@ const Testimonials = () => {
                       viewBox="0 0 38 36"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                      className="opacity-70"
+                      className="z-10"
                     >
                       <path
                         d="M0.133767 0.500488L14.7729 19.8053L0.0415035 35.5005L3.35722 35.5005L16.2549 21.7588L26.6754 35.5005L37.9582 35.5005L22.495 15.1101L36.2071 0.500489L32.8914 0.500489L21.0137 13.1559L11.4165 0.500488L0.133767 0.500488ZM5.00967 2.90959L10.1929 2.90959L33.0816 33.092L27.8984 33.092L5.00967 2.90959Z"
