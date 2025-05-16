@@ -38,7 +38,7 @@ const BackToTop = () => {
       }`}
     >
       <Image
-        src="/images/back-to-top.svg"
+        src="/images/svg/back-to-top.svg"
         alt="back-to-top"
         height={50}
         width={50}

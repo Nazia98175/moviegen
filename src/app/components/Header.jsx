@@ -114,7 +114,7 @@ const Header = () => {
                 ))}
               </div>
             </div>
-            <div className="text-base font-medium font-geist bg-primary hover:shadow-[#a37ef229] border border-lightpurple44  p-1 rounded-[12px] cursor-pointer hidden lg:flex">
+            <div className="text-base font-medium font-geist bg-primary hover: shadow-[#a37ef229] shadow-[0_10px_10px_rgba(163_126_242_0.16)] border border-lightpurple44  p-1 rounded-[12px] cursor-pointer hidden lg:flex">
               <button className="text-grayd8 px-5 cursor-pointer border-none">
                 Sign In
               </button>

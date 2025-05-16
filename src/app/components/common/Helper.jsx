@@ -17,3 +17,11 @@ export const navList = [
   { title: "Pricing", url: "#howitwork" },
   { title: "Contact", url: "/sign-in" },
 ];
+export const navLinks = [
+  { name: "Home", href: "#" },
+  { name: "About Us", href: "#" },
+  { name: "How It Works", href: "#" },
+  { name: "Pricing", href: "#" },
+  { name: "Articles", href: "#" },
+  { name: "Contact Us", href: "#" },
+];
