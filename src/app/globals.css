@@ -76,6 +76,19 @@ body {
   background: linear-gradient(to right, #f0a9d3 0%, #f9dee3 50%, #9691f2 100%);
 }
 
+@layer utilities {
+  .stroke-text-white {
+    color: white;
+    -webkit-text-stroke: 1px #0d0c0f;
+    text-stroke: 1px #0d0c0f;
+  }
+
+  .stroke-text-purple {
+    color: #8e8bff;
+    -webkit-text-stroke: 1px #0d0c0f;
+    text-stroke: 1px #0d0c0f;
+  }
+}
 .gradient-border {
   position: relative;
   padding: 1px; /* for the gradient outline */

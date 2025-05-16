@@ -1,6 +1,5 @@
 import React from "react";
 import SectionTag from "./common/SectionTag";
-import Image from "next/image";
 import VideoEditorCards from "./VideoEditorCards";
 
 const VideoEditor = () => {
