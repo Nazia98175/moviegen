@@ -12,8 +12,8 @@ export default function Home() {
     <>
       <Hero />
       <VideoEditor />
-      <Pricing />
       <Features />
+      <Pricing />
       <Testimonials />
       <Footer />
       <BackToTop />

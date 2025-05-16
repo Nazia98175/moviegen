@@ -157,10 +157,10 @@ const Testimonials = () => {
         </p>
 
         {/* X/Twitter Pagination with Gradient Border */}
-        <div className="flex md:flex-row justify-center gap-4 md:gap-8 items-center">
+        <div className="flex md:flex-row justify-center gap-3 md:gap-8 items-center">
           {Array.from({ length: 9 }).map((_, i) => {
             // On mobile, only show icons 3, 4, and 5 (the middle one and its neighbors)
-            const showOnMobile = i >= 2 && i <= 6;
+            const showOnMobile = i >= 3 && i <= 5;
             return (
               <div
                 key={i}
