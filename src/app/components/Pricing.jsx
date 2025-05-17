@@ -183,7 +183,7 @@ const Pricing = () => {
                   </span>
                 </p>
                 <button
-                  className={`w-full py-3.5 rounded-[12px] font-semibold font-geist text-sm md:text-base mt-5 md:mt-6 lg:mt-8 ${
+                  className={`w-full py-3.5 rounded-[12px] font-semibold font-geist text-sm md:text-base mt-5 md:mt-6 lg:mt-8 cursor-pointer ${
                     plan.title === "Creator"
                       ? "primary_gradient text-blue0d"
                       : "bg-blue15 text-secondary border border-gray44"
@@ -216,7 +216,7 @@ const Pricing = () => {
 
         <div className="mt-6 md:mt-8 lg:mt-10 font-geist font-medium text-sm md:text-base lg:text-lg text-grayd8">
           Questions about enterprise or custom pricing?{" "}
-          <button className="mt-2 md:mt-0 md:ml-2 px-3 py-[9px] border border-[#F0A9D380] rounded-[8px] text-transparent bg-clip-text bg-gradient-to-r from-[#F0A9D3] via-[#F9DEE3] to-[#9691F2]">
+          <button className="mt-2 md:mt-0 md:ml-2 px-3 py-[9px] border border-[#F0A9D380] rounded-[8px] text-transparent bg-clip-text bg-gradient-to-r from-[#F0A9D3] via-[#F9DEE3] to-[#9691F2] cursor-pointer">
             Contact Sales
           </button>
         </div>
