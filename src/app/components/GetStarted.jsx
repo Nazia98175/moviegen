@@ -51,7 +51,7 @@ const GetStarted = () => {
               turns your words into perfectly cut footage, no downloads,
               timelines, or plug-ins required.
             </p>
-            <button className="font-geist px-3 py-3.5 primary_gradient border border-white rounded-[8px] cursor-pointer mt-10">
+            <button className="font-geist font-medium text-base px-3 py-3.5 primary_gradient border border-white rounded-[8px] cursor-pointer mt-10">
               Get Started Now
             </button>
           </div>
