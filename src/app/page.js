@@ -7,12 +7,14 @@ import Features from "./components/Features";
 import Footer from "./components/Footer";
 import Testimonials from "./components/Testimonials";
 import GetStarted from "./components/GetStarted";
+import VideoEditorHero from "./components/common/VideoEditorHero";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <VideoEditor />
+      <VideoEditorHero />
       <Features />
       <Pricing />
       <Testimonials />

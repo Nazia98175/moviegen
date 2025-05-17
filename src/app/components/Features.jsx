@@ -36,7 +36,7 @@ const features = [
 const Features = () => {
   return (
     <section className="container pt-20 xl:pb-32 flex flex-col items-center relative px-2">
-      <SectionTag emoji="/images/png/start-emoji.png" title="Why Moviegen?" />
+     
 
       {/* Main 3x3 Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-3 gap-3 xl:gap-0 mt-12 w-full max-w-[1020px]">
