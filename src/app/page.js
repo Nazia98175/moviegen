@@ -13,13 +13,8 @@ export default function Home() {
     <>
       <Hero />
       <VideoEditor />
-<<<<<<< HEAD
-      <Pricing />
-      {/* <Features /> */}
-=======
       <Features />
       <Pricing />
->>>>>>> a97414b52455123852686d035c77aa8d54e7f2b6
       <Testimonials />
       <GetStarted />
       <Footer />
