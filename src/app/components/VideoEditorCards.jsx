@@ -4,7 +4,7 @@ import React from "react";
 const VideoEditorCards = () => {
   return (
     <>
-      <div className="text-white pt-10 md:pt-12 lg:pt-16 xl:pt-[72px] hidden">
+      <div className="text-white pt-10 md:pt-12 lg:pt-16 xl:pt-[72px] ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Block 1: Left Column Large Card */}
           <div className="bg-darkblue0d border border-[#1f1f2b] rounded-2xl w-[364px] overflow-hidden p-4 md:p-5 lg:p-6 xl:p-8  flex flex-col col-start-1 col-end-2">
@@ -121,37 +121,7 @@ const VideoEditorCards = () => {
               </button>
             </div>
           </div>
-          <div className="bg-[#121218] border border-[#1f1f2b] rounded-2xl p-4 row-start-2 row-start-3">
-            <h3 className="text-lg font-semibold mb-2">Works Anywhere</h3>
-            <p className="text-sm text-gray-400 mb-4">
-              Cloud renders mean your phone, tablet, or dusty laptop all feel
-              pro-level.
-            </p>
-            <div className="flex flex-col lg:flex-row gap-4">
-              <div className="bg-[#1F1F2C] p-4 rounded-xl flex-1">
-                <p className="text-xs text-gray-400 mb-2">Share this project</p>
-                <div className="flex gap-2">
-                  <input
-                    type="email"
-                    placeholder="Email address here"
-                    className="bg-[#2C2C39] p-2 rounded-lg text-sm w-full focus:outline-none"
-                  />
-                  <button className="bg-[#8B5CF6] px-4 py-2 rounded-lg text-black font-medium text-sm">
-                    →
-                  </button>
-                </div>
-              </div>
-              <div className="bg-[#1F1F2C] p-4 rounded-xl flex-1 text-center">
-                <p className="text-sm text-gray-300 mb-2">
-                  Rendering your video
-                </p>
-                <p className="text-2xl font-bold mb-1">25%</p>
-                <p className="text-xs text-gray-400">
-                  Hang in there, this may take a few minutes
-                </p>
-              </div>
-            </div>
-          </div>
+
           {/* Block 2: Studio Grade Polish */}
           <div className="bg-[#121218] border border-[#1f1f2b] rounded-2xl p-4">
             <h3 className="text-lg font-semibold mb-2">Studio Grade Polish</h3>
@@ -203,59 +173,36 @@ const VideoEditorCards = () => {
           </div>
 
           {/* Block 5: Works Anywhere */}
-        </div>
-      </div>
-      <div className="bg-[#0b0b0f] min-h-screen p-6 text-white">
-        <div className="grid grid-cols-12 gap-6 max-w-screen-xl mx-auto">
-          {/* Card 1 - Large Vertical Card */}
-          <div className="col-span-4 row-span-2 bg-gradient-to-br from-[#1e1e2f] to-[#13131e] p-4 rounded-xl border border-blue-500">
-            <p className="text-sm mb-2">Why Creators Switch to Moviegen</p>
-            <div className="aspect-video bg-black mb-2 rounded-lg overflow-hidden">
-              {" "}
-              {/* image or video */}
-            </div>
-            <p className="text-xs">
-              Add on-screen text: “This street? ICONIC.”
+          <div className="bg-[#121218] border border-[#1f1f2b] rounded-2xl p-4 row-start-2 row-start-3">
+            <h3 className="text-lg font-semibold mb-2">Works Anywhere</h3>
+            <p className="text-sm text-gray-400 mb-4">
+              Cloud renders mean your phone, tablet, or dusty laptop all feel
+              pro-level.
             </p>
-          </div>
-
-          {/* Card 2 - Horizontal Card */}
-          <div className="col-span-8 col-row-1 bg-gradient-to-br from-[#1e1e2f] to-[#13131e] p-4 rounded-xl">
-            <p className="text-sm mb-2">Studio Grade Polish</p>
-            <div className="aspect-video bg-black rounded-lg overflow-hidden"></div>
-          </div>
-
-          {/* Card 3 - Small Top Card */}
-          <div className="col-span-3 bg-gradient-to-br from-[#1e1e2f] to-[#13131e] p-4 rounded-xl">
-            <p className="text-sm">Lightning Fast Revisions</p>
-          </div>
-
-          {/* Card 4 - Centered Blue Box */}
-          <div className="col-start-5 col-span-4 row-span-2 bg-gradient-to-br from-[#0e0e15] to-[#1c1c26] border border-blue-400 p-4 rounded-xl text-center">
-            <p className="text-sm mb-2">Quick Access Moviegen</p>
-            <div className="grid grid-cols-3 gap-2 text-xs mt-4">
-              <div className="border p-2 rounded bg-[#1f1f2e]">⌘</div>
-              <div className="border p-2 rounded bg-[#1f1f2e]">Shift</div>
-              <div className="border p-2 rounded bg-[#1f1f2e]">Space</div>
+            <div className="flex flex-col lg:flex-row gap-4">
+              <div className="bg-[#1F1F2C] p-4 rounded-xl flex-1">
+                <p className="text-xs text-gray-400 mb-2">Share this project</p>
+                <div className="flex gap-2">
+                  <input
+                    type="email"
+                    placeholder="Email address here"
+                    className="bg-[#2C2C39] p-2 rounded-lg text-sm w-full focus:outline-none"
+                  />
+                  <button className="bg-[#8B5CF6] px-4 py-2 rounded-lg text-black font-medium text-sm">
+                    →
+                  </button>
+                </div>
+              </div>
+              <div className="bg-[#1F1F2C] p-4 rounded-xl flex-1 text-center">
+                <p className="text-sm text-gray-300 mb-2">
+                  Rendering your video
+                </p>
+                <p className="text-2xl font-bold mb-1">25%</p>
+                <p className="text-xs text-gray-400">
+                  Hang in there, this may take a few minutes
+                </p>
+              </div>
             </div>
-          </div>
-
-          {/* Card 5 - Bottom Left */}
-          <div className="col-span-4 bg-gradient-to-br from-[#1e1e2f] to-[#13131e] p-4 rounded-xl">
-            <p className="text-sm">Works Anywhere</p>
-          </div>
-
-          {/* Card 6 - Bottom Center */}
-          <div className="col-span-4 bg-gradient-to-br from-[#1e1e2f] to-[#13131e] p-4 rounded-xl">
-            <p className="text-sm mb-2">Rendering Preview</p>
-            <div className="h-32 bg-black rounded-lg mt-2 flex items-center justify-center text-white">
-              25%
-            </div>
-          </div>
-
-          {/* Card 7 - Bottom Right (with lightning icon placeholder) */}
-          <div className="col-span-4 bg-gradient-to-br from-[#1e1e2f] to-[#13131e] p-4 rounded-xl flex items-center justify-center">
-            <div className="text-6xl text-purple-500">⚡</div>
           </div>
         </div>
       </div>
