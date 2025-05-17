@@ -12,7 +12,7 @@ const testimonials = [
       "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
   },
   {
-    name: "Floyd Miles",;
+    name: "Floyd Miles",
     role: "Founder at Revolut",
     companyLogo: "/images/svg/revolut-logo.svg",
     profile: "/images/svg/testimonial-profile.svg",
