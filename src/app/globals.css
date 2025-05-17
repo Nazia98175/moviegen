@@ -111,3 +111,32 @@ body {
   );
   padding: 12px; /* Your content padding */
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* grid-cols-3 */
+  gap: 1rem; /* gap-4 */
+  grid-auto-flow: row; /* grid-flow-row */
+}
+
+.box {
+  padding: 1.25rem; /* p-5 */
+  text-align: center;
+  background-color: white;
+}
+
+/* Positioning the grid items like Tailwind utility classes */
+.a {
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.b {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.e {
+  grid-row-start: 3;
+  grid-column-start: 1;
+}
