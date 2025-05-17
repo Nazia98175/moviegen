@@ -41,9 +41,11 @@ const VideoEditorHero = () => {
                 </button>
 
                 <button className="px-[18px] py-1 primary_gradient border border-white rounded-[8px] cursor-pointer text-[#0D0C0F] flex items-center gap-1 font-semibold text-shadow-lg">
-                  <img
+                  <Image
+                    width="16"
+                    height="16"
                     src="/images/svg/send-icon.svg"
-                    alt="Send"
+                    alt="arrow"
                     className="w-[15px] h-[16px]"
                   />
                   <span>Send</span>

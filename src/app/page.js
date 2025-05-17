@@ -7,16 +7,13 @@ import Features from "./components/Features";
 import Footer from "./components/Footer";
 import Testimonials from "./components/Testimonials";
 import GetStarted from "./components/GetStarted";
-<<<<<<< HEAD
-import GridPreview from "./components/GridPreview";
-=======
 import VideoEditorHero from "./components/common/VideoEditorHero";
->>>>>>> a45afcc25c07f852fe99ba62a459971868404c11
+import GridPreview from "./components/GridPreview";
 
 export default function Home() {
   return (
     <>
-      {/* <Hero />
+      <Hero />
       <VideoEditor />
       <VideoEditorHero />
       <Features />
@@ -24,7 +21,7 @@ export default function Home() {
       <Testimonials />
       <GetStarted />
       <Footer />
-      <BackToTop /> */}
+      <BackToTop />
       <GridPreview />
     </>
   );
