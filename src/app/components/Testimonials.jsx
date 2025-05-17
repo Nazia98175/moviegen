@@ -12,7 +12,7 @@ const testimonials = [
       "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
   },
   {
-    name: "Floyd Miles",
+    name: "Floyd Miles",;
     role: "Founder at Revolut",
     companyLogo: "/images/svg/revolut-logo.svg",
     profile: "/images/svg/testimonial-profile.svg",
@@ -37,7 +37,6 @@ const Testimonials = () => {
       <div className="max-w-5xl mx-auto">
         <div className={heading}>
           <SectionTag title="Trusted by Our Users" tagclass="hidden" />
-
           <h2 className="text-[#E1E7F5] md:pt-4">What Our Users Are Saying</h2>
         </div>
         <p className="text-[#D8DFF0]/80 max-w-2xl mx-auto mb-12 mt-4 max-w-[560px]">
@@ -50,91 +49,77 @@ const Testimonials = () => {
           {testimonials.map((item, idx) => (
             <div
               key={idx}
-              className={`rounded-2xl overflow-hidden relative z-10 ${
-                item.highlighted ? "transform md:scale-108" : ""
+              className={`group rounded-2xl overflow-hidden relative z-10 cursor-pointer transition-transform duration-300 ${
+                item.highlighted ? "transform md:scale-110" : "hover:scale-105"
               }`}
             >
-              {item.highlighted ? (
-                <div
-                  className="h-full"
-                  style={{
-                    background:
-                      "linear-gradient(91.18deg, rgba(240, 169, 211, 0.5) 0%, rgba(249, 222, 227, 0.5) 49.52%, rgba(150, 145, 242, 0.5) 100%)",
-                    padding: "1px",
-                    boxShadow:
-                      "0px 0px 0px 1px #1B1A22, 0px 8px 8px 0px rgba(163, 126, 242, 0.16)",
-                  }}
-                >
-                  <div className="bg-[#121218] h-full rounded-2xl px-4 py-6 flex flex-col">
-                    <p className="text-sm mb-6 flex-grow">{item.content}</p>
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-gray-600 overflow-hidden flex items-center justify-center">
-                          <Image
-                            src={item.profile}
-                            alt={item.name}
-                            width={32}
-                            height={32}
-                          />
-                        </div>
-                        <div>
-                          <p className="font-semibold text-sm text-left">
-                            {item.name}
-                          </p>
-                          <p className="text-xs text-[#A8A8A9]">{item.role}</p>
-                        </div>
+              <div
+                className={`relative h-full rounded-2xl transition-all duration-300
+                  ${
+                    item.highlighted
+                      ? ""
+                      : "border border-[#44436285] group-hover:border-transparent"
+                  }
+                `}
+                style={{
+                  ...(item.highlighted
+                    ? {
+                        background:
+                          "linear-gradient(91.18deg, rgba(240, 169, 211, 0.5) 0%, rgba(249, 222, 227, 0.5) 49.52%, rgba(150, 145, 242, 0.5) 100%)",
+                        padding: "1px",
+                        boxShadow:
+                          "0px 0px 0px 1px #1B1A22, 0px 8px 8px 0px rgba(163, 126, 242, 0.16)",
+                      }
+                    : { boxShadow: "0px 0px 0px 1px #1B1A22" }),
+                }}
+              >
+                {/* Gradient border overlay for non-highlighted cards on hover */}
+                {!item.highlighted && (
+                  <div
+                    className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    style={{
+                      background:
+                        "linear-gradient(91.18deg, rgba(240, 169, 211, 0.5) 0%, rgba(249, 222, 227, 0.5) 49.52%, rgba(150, 145, 242, 0.5) 100%)",
+                      padding: "1px",
+                      zIndex: 1,
+                    }}
+                  />
+                )}
+
+                <div className="bg-[#121218] h-full rounded-2xl px-4 py-6 flex flex-col relative z-10">
+                  <p className="text-sm mb-6 flex-grow text-left">
+                    {item.content}
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-gray-600 overflow-hidden flex items-center justify-center">
+                        <Image
+                          src={item.profile}
+                          alt={item.name}
+                          width={32}
+                          height={32}
+                        />
                       </div>
-                      {/* Larger size for Revolut logo */}
-                      <Image
-                        src={item.companyLogo}
-                        alt={item.role}
-                        width={90}
-                        height={30}
-                        className="transform scale-100"
-                      />
+                      <div>
+                        <p className="font-semibold text-sm text-left">
+                          {item.name}
+                        </p>
+                        <p className="text-xs text-[#A8A8A9]">{item.role}</p>
+                      </div>
                     </div>
+                    <Image
+                      src={item.companyLogo}
+                      alt={item.role}
+                      width={item.highlighted ? 90 : 60}
+                      height={item.highlighted ? 30 : 20}
+                      className="transform scale-100"
+                    />
                   </div>
                 </div>
-              ) : (
-                <div
-                  className="h-full border border-[#44436285] rounded-2xl p-0"
-                  style={{
-                    boxShadow: "0px 0px 0px 1px #1B1A22",
-                  }}
-                >
-                  <div className="bg-[#121218] h-full rounded-2xl px-4 py-6 flex flex-col">
-                    <p className="text-sm text-gray-300 mb-6 flex-grow">
-                      {item.content}
-                    </p>
-                    <div className="flex justify-between items-center">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-full bg-gray-600 overflow-hidden flex items-center justify-center">
-                          <Image
-                            src={item.profile}
-                            alt={item.name}
-                            width={32}
-                            height={32}
-                          />
-                        </div>
-                        <div>
-                          <p className="font-semibold text-left text-sm">
-                            {item.name}
-                          </p>
-                          <p className="text-xs text-[#A8A8A9]">{item.role}</p>
-                        </div>
-                      </div>
-                      <Image
-                        src={item.companyLogo}
-                        alt={item.role}
-                        width={60}
-                        height={20}
-                      />
-                    </div>
-                  </div>
-                </div>
-              )}
+              </div>
             </div>
           ))}
+          {/* Blur shadows */}
           <img
             src="/images/svg/testimonial-blur-shadow-1.svg"
             alt=""
@@ -166,8 +151,8 @@ const Testimonials = () => {
                 key={i}
                 className={`${
                   i === 4
-                    ? "p-10 flex items-center justify-center relative"
-                    : "flex items-center justify-center"
+                    ? "p-10 flex items-center justify-center relative cursor-pointer"
+                    : "flex items-center justify-center cursor-pointer"
                 } ${!showOnMobile ? "hidden md:flex" : ""}`}
               >
                 {i === 4 ? (
