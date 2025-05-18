@@ -145,7 +145,7 @@ body {
 }
 
 .swiper {
-  @apply !py-20
+  @apply !py-12 lg:!py-20
 }
 
 .swiper-slide-active>div{
