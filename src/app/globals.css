@@ -149,5 +149,5 @@ body {
 }
 
 .swiper-slide-active>div{
-  @apply !h-[256px] bg-[#121218]
+  @apply !scale-y-120 !scale-x-110 !duration-300 bg-[#121218]
 }
