@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const VideoEditorCards = () => {
   return (
-    <div className="grid grid-cols-3 grid-rows-3 gap-4 mt-10 xl:mt-[72px]">
-      <div className="row-span-2 col-span-1 rounded-[16px] border border-[#44436285] bg-darkblue0d overflow-hidden">
+    <div className="grid sm:grid-cols-3 sm:grid-rows-3 gap-3 sm:gap-4 mt-6 sm:mt-10 xl:mt-[72px] mx-auto max-sm:max-w-[355px]">
+      <div className="sm:row-span-2 col-span-2 sm:col-span-1 rounded-[16px] border border-[#44436285] bg-darkblue0d overflow-hidden">
         <Image
           unoptimized
           className="w-full h-full object-cover"
@@ -13,7 +13,7 @@ const VideoEditorCards = () => {
           alt="hero-bg-blur"
         />
       </div>
-      <div className="row-span-1 col-span-2 rounded-[16px] border border-[#44436285] bg-darkblue0d overflow-hidden">
+      <div className="row-span-2 sm:row-span-1 col-span-2 rounded-[16px] border border-[#44436285] bg-darkblue0d overflow-hidden">
         <Image
           unoptimized
           className="w-full h-full object-cover object-[10%]"
@@ -23,7 +23,7 @@ const VideoEditorCards = () => {
           alt="hero-bg-blur"
         />
       </div>
-      <div className="row-span-1 col-span-1 rounded-[16px] border border-[#44436285] overflow-hidden">
+      <div className="row-span-2 sm:row-span-1 col-span-2 sm:col-span-1 rounded-[16px] border border-[#44436285] overflow-hidden">
         <Image
           unoptimized
           className="w-full h-full object-cover object-[10%]"
@@ -33,7 +33,7 @@ const VideoEditorCards = () => {
           alt="hero-bg-blur"
         />
       </div>
-      <div className="row-span-2 col-span-1 rounded-[16px] border border-[#44436285] overflow-hidden">
+      <div className="row-span-2 col-span-2 sm:col-span-1 rounded-[16px] border border-[#44436285] overflow-hidden">
         <Image
           unoptimized
           className="w-full h-full object-cover object-[10%]"

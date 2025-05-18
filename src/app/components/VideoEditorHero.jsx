@@ -76,7 +76,7 @@ const VideoEditorHero = () => {
             </div>
             <img
               src="/images/svg/trusted-users-image.svg"
-              className="relative z-10 mt-16"
+              className="relative z-10 mt-6 sm:mt-10 lg:mt-16"
             />
           </div>
 

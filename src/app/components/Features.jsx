@@ -38,9 +38,9 @@ const cardClass =
 
 const Features = () => {
   return (
-    <section className="container pt-20 xl:pb-32 flex flex-col gap-3 md:gap-6 items-center relative px-2">
+    <section className="container pt-6 sm:pt-10 xl:pt-20 xl:pb-32 flex flex-col gap-4 md:gap-6 items-center relative px-2">
       {/* Top Row */}
-      <div className="flex flex-col md:flex-row w-full max-w-[1020px] gap-6">
+      <div className="flex flex-col md:flex-row w-full max-w-[1020px] gap-4 sm:gap-6">
         <div className={cardClass}>
           <Image src={features[0].icon} alt="icon" width={32} height={32} />
           <h3 className="!font-geist text-secondary text-base font-semibold mt-3">
@@ -78,8 +78,8 @@ const Features = () => {
         </div>
       </div>
       {/* Middle Row */}
-      <div className="flex w-full max-w-[1020px] ">
-        <div className="hidden lg:flex items-center justify-center">
+      <div className="hidden lg:flex w-full max-w-[1020px] ">
+        <div className="flex items-center justify-center">
           <img
             src="/images/svg/rectangle-2.svg"
             alt="rectangle-2"
@@ -109,7 +109,7 @@ const Features = () => {
         </div>
       </div>
       {/* Bottom Row */}
-      <div className="flex w-full max-w-[1020px] gap-6 flex-col md:flex-row">
+      <div className="flex w-full max-w-[1020px] gap-4 sm:gap-6 flex-col md:flex-row">
         <div className={cardClass}>
           <Image src={features[2].icon} alt="icon" width={32} height={32} />
           <h3 className="!font-geist text-white text-base lg:text-lg font-semibold">

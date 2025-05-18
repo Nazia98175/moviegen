@@ -118,7 +118,7 @@ const Pricing = () => {
             boxShadow:
               "inset 0px 2px 3px 0px #FFFFFF1A, inset 0px 0px 6px 2px #A37EF21F, 0px 8px 12px 0px #A37EF229",
           }}
-          className="text-xs sm:text-sm md:text-base font-medium font-geist bg-primary hover: shadow-[#a37ef229] border border-[#F9DEE380] inner_shadow p-1 rounded-[12px] cursor-pointer mt-8 flex item-center inline-block justify-center mt-10 md:mt-14 lg:mt-16"
+          className="text-xs sm:text-sm md:text-base font-medium font-geist bg-primary hover: shadow-[#a37ef229] border border-[#F9DEE380] inner_shadow p-1 rounded-[12px] cursor-pointer mt-6 sm:mt-8 flex item-center inline-block justify-center mt-6 md:mt-14 lg:mt-16"
         >
           <div className="flex justify-center gap-2">
             <button
@@ -153,7 +153,7 @@ const Pricing = () => {
             </button>
           </div>
         </div>
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 text-start">
+        <div className="mt-6 sm:mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 text-start">
           {plans[billing].map((plan, index) => (
             <div
               key={index}

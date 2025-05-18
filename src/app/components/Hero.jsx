@@ -37,7 +37,7 @@ const Hero = () => {
               timelines, or plug-ins required.
             </p>
           </div>
-          <div className="gradient-border mt-10 md:mt-14 lg:mt-16 p-3 relative rounded-[14px] md:rounded-[18px] lg:rounded-[24px]">
+          <div className="gradient-border mt-6 md:mt-14 lg:mt-16 p-3 relative rounded-[14px] md:rounded-[18px] lg:rounded-[24px]">
             <Image
               className="hidden md:flex max-h-[300px] absolute bottom-10 -left-[120px] [120px] z-10"
               width="120"
