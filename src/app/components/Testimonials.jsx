@@ -34,33 +34,38 @@ const Testimonials = () => {
   const heading = "common_heading";
   return (
     <section className="py-20 text-white text-center px-4">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-[1236px] mx-auto">
         <div className={heading}>
           <SectionTag title="Trusted by Our Users" tagclass="hidden" />
-          <h2 className="text-[#E1E7F5] md:pt-4">What Our Users Are Saying</h2>
+          <h2 className="text-[#E1E7F5] pt-4">What Our Users Are Saying</h2>
         </div>
-        <p className="text-[#D8DFF0]/80 max-w-2xl mx-auto mb-12 mt-4 max-w-[560px]">
+        <p className="text-[#D8DFF0]/80 max-w-2xl mx-auto mb-12 mt-4 max-w-[560px] text-base lg:text-xl font-medium leading-[150%]">
           Lorem ipsum dolor sit amet consectetur. Etiam risus adipiscing etiam
           pellentesque. Lorem mauris convallis pretium imperdiet. At lorem.
         </p>
 
         {/* Testimonials */}
-        <div className="grid md:grid-cols-3 gap-8 relative">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-3 lg:gap-8 relative">
           {testimonials.map((item, idx) => (
             <div
               key={idx}
-              className={`group rounded-2xl overflow-hidden relative z-10 cursor-pointer transition-transform duration-300 ${
-                item.highlighted ? "transform md:scale-110" : "hover:scale-105"
-              }`}
+              className={`
+                group rounded-[12px] overflow-hidden relative z-10 
+                w-full max-w-[372px] mx-auto 
+                h-[210px] cursor-pointer hover:max-w-[428px] hover:[256px]
+                transition-transform duration-300 
+                hover:scale-[1.15] 
+                ${item.highlighted ? "transform md:scale-100" : ""}
+              `}
             >
               <div
-                className={`relative h-full rounded-2xl transition-all duration-300
-                  ${
-                    item.highlighted
-                      ? ""
-                      : "border border-[#44436285] group-hover:border-transparent"
-                  }
-                `}
+                className={`relative h-full rounded-[12px] transition-all duration-300
+          ${
+            item.highlighted
+              ? ""
+              : "border border-[#44436285] group-hover:border-transparent"
+          }
+        `}
                 style={{
                   ...(item.highlighted
                     ? {
@@ -73,10 +78,9 @@ const Testimonials = () => {
                     : { boxShadow: "0px 0px 0px 1px #1B1A22" }),
                 }}
               >
-                {/* Gradient border overlay for non-highlighted cards on hover */}
                 {!item.highlighted && (
                   <div
-                    className="absolute inset-0 rounded-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="absolute inset-0 rounded-[12px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                     style={{
                       background:
                         "linear-gradient(91.18deg, rgba(240, 169, 211, 0.5) 0%, rgba(249, 222, 227, 0.5) 49.52%, rgba(150, 145, 242, 0.5) 100%)",
@@ -86,12 +90,12 @@ const Testimonials = () => {
                   />
                 )}
 
-                <div className="bg-[#121218] h-full rounded-2xl px-4 py-6 flex flex-col relative z-10">
-                  <p className="text-sm mb-6 flex-grow text-left">
+                <div className="bg-[#121218] h-full rounded-[12px] px-4 py-6 md:py-2 lg:py-6 flex flex-col relative z-10">
+                  <p className="text-sm mb-3 lg:mb-6 flex-grow text-left">
                     {item.content}
                   </p>
                   <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-1 lg:gap-3">
                       <div className="w-8 h-8 rounded-full bg-gray-600 overflow-hidden flex items-center justify-center">
                         <Image
                           src={item.profile}
@@ -110,30 +114,35 @@ const Testimonials = () => {
                     <Image
                       src={item.companyLogo}
                       alt={item.role}
-                      width={item.highlighted ? 90 : 60}
-                      height={item.highlighted ? 30 : 20}
-                      className="transform scale-100"
+                      width={90} // Always set max width for Next.js optimization
+                      height={30} // Always set max height for Next.js optimization
+                      className={
+                        item.highlighted
+                          ? "w-[60px] h-[20px] lg:w-[90px] lg:h-[30px]"
+                          : "w-[60px] h-[20px]"
+                      }
                     />
                   </div>
                 </div>
               </div>
             </div>
           ))}
+
           {/* Blur shadows */}
           <img
             src="/images/svg/testimonial-blur-shadow-1.svg"
-            alt=""
-            className="absolute z-0 right-48 transform -translate-y-0.5"
+            alt="shadow-blur"
+            className="absolute z-10 right-60 transform -translate-y-0.5"
           />
           <img
             src="/images/svg/testimonial-blur-shadow-2.svg"
-            alt=""
-            className="absolute z-0 right-60 transform -translate-y-1"
+            alt="shadow-blur"
+            className="absolute z-10 right-80 transform -translate-y-1"
           />
           <img
             src="/images/svg/testimonial-blur-shadow-3.svg"
-            alt=""
-            className="absolute z-0 right-96 transform -translate-y-2/5"
+            alt="shadow-blur"
+            className="absolute z-0 right-130 transform -translate-y-2/5"
           />
         </div>
 
@@ -148,12 +157,11 @@ const Testimonials = () => {
             const showOnMobile = i >= 3 && i <= 5;
             return (
               <div
-                key={i}
                 className={`${
                   i === 4
                     ? "p-10 flex items-center justify-center relative cursor-pointer"
                     : "flex items-center justify-center cursor-pointer"
-                } ${!showOnMobile ? "hidden md:flex" : ""}`}
+                } ${!showOnMobile ? "hidden md:flex" : ""} transition-transform duration-300 hover:scale-110`}
               >
                 {i === 4 ? (
                   <div

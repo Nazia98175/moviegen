@@ -6,7 +6,6 @@ body {
   scroll-behavior: smooth;
   background-color: #05050e !important;
 }
-
 @theme {
   --color-primary: #0f0f27;
   --color-secondary: #e1e7f5;
@@ -20,11 +19,11 @@ body {
   --color-gray83: #838aa3;
   --color-grayd8: #d8dff0cc;
   --color-black05: #05060e;
-
+  --color-lightgrey: "#44436285";
+  --color-colarblack: "#1B1A22";
   --breakpoint-xs: 1200px;
   --breakpoint-2xl: 1336px;
   --breakpoint-3xl: 1736px;
-
   --font-geist: "Geist", sans-serif;
   --font-suisseintl: "SuisseIntl", sans-serif;
   --font-inter-tight: "Inter Tight", sans-serif;
@@ -78,7 +77,6 @@ body {
 .primary_gradient {
   background: linear-gradient(to right, #f0a9d3 0%, #f9dee3 50%, #9691f2 100%);
 }
-
 @layer utilities {
   .stroke-text-white {
     color: white;
@@ -101,7 +99,6 @@ body {
     rgba(68, 67, 98, 0.52) 100%
   );
 }
-
 .gradient-border > .content {
   /* slightly less */
   background: linear-gradient(

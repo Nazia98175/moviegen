@@ -101,7 +101,7 @@ const Pricing = () => {
         src="/images/png/pricing-blurr-center.png"
         alt="shade"
       />
-      <div className="text-white px-4 text-center max-w-[1150px] 2xl:max-w-[1060px] 3xl:max-w-[1356px] mx-auto px-4 md:px-5 xl:px-0 relative">
+      <div className="text-white text-center max-w-[1150px] 2xl:max-w-[1060px] 3xl:max-w-[1356px] mx-auto px-4 md:px-5 xl:px-0 relative">
         <SectionTag title="Trusted by Our Users" tagclass="hidden" />
         <div className="text-center">
           <div className={heading}>

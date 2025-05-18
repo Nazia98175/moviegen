@@ -64,14 +64,14 @@ const VideoEditorCards = () => {
               <div className="absolute -top-5 -left-10 z-0 rotate-[176.34]">
                 <img
                   src="/images/svg/this-street-icon.svg"
-                  alt=""
+                  alt="street-iconic"
                   className="blur"
                 />
               </div>
               <div className="absolute -top-60 left-14 z-0 rotate-[17.83]">
                 <img
                   src="/images/svg/blue-this-street-icon.svg"
-                  alt=""
+                  alt="street-iconic"
                   className="blur"
                 />
               </div>
@@ -80,7 +80,7 @@ const VideoEditorCards = () => {
             <div className="flex items-center gap-2 text-[15.6px] mb-2">
               {/* <FaPlay className="text-white" size={12} /> */}
               <span className="flex gap-[10.4px] mt-2  text-white">
-                <img src="/images/svg/play-button.svg" alt="" />
+                <img src="/images/svg/play-button.svg" alt="play-button" />
                 12:08 <span className="text-[#A1A1AA]">/ 15:00</span>
               </span>
             </div>
