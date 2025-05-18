@@ -66,26 +66,26 @@ const Footer = () => {
       </div>
       {/* PRIVACY AND POLICIES */}
       <div className="font-medium text-xs md:text-base text-gray83 mt-8 md:mt-12 lg:mt-16 xl:mt-20 flex flex-col md:flex-row items-center justify-between px-4 md:px-6 lg:px-10 gap-1 py-4 md:py-6 lg:py-8 bg-[#0A0A0F]">
-        <p className="leading-[100%] font-medium text-gray83 text-sm sm:text-base">
+        <p className="leading-[100%] font-medium text-gray83 text-sm sm:text-base hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F0A9D3] hover:via-[#F9DEE3] hover:to-[#9691F2] hover:duration-300">
           © Moviegen, 2025 — All rights reserved
         </p>
         <div className="flex justify-center gap-3 md:space-x-4 max-md:mt-3">
           <Link
-            className="leading-[100%] font-medium text-gray83 text-sm sm:text-base"
+            className="leading-[100%] font-medium text-gray83 text-sm sm:text-base hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F0A9D3] hover:via-[#F9DEE3] hover:to-[#9691F2] hover:duration-300"
             href={"/"}
           >
             Terms of Service
           </Link>
           <Link
             href="#"
-            className="flex items-center gap-1 md:gap-3.5 leading-[100%] font-medium text-gray83 text-sm sm:text-base"
+            className="flex items-center gap-1 md:gap-3.5 leading-[100%] font-medium text-gray83 text-sm sm:text-base hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F0A9D3] hover:via-[#F9DEE3] hover:to-[#9691F2] hover:duration-300"
           >
             <p className="rounded-full bg-gray83 w-1 h-1"></p>
             Privacy Policy
           </Link>
           <Link
             href="#"
-            className="flex items-center gap-1 md:gap-3.5 leading-[100%] font-medium text-gray83 text-sm sm:text-base"
+            className="flex items-center gap-1 md:gap-3.5 leading-[100%] font-medium text-gray83 text-sm sm:text-base hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-[#F0A9D3] hover:via-[#F9DEE3] hover:to-[#9691F2] hover:duration-300"
           >
             <p className="rounded-full bg-gray83 w-1 h-1"></p>
             Cookies
