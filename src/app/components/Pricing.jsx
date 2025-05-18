@@ -6,7 +6,7 @@ import Image from "next/image";
 const Pricing = () => {
   const [billing, setBilling] = useState("monthly");
   const heading = "common_heading";
-  const para = "common_para max-w-[550px] lg:max-w-[700px]";
+  const para = "common_para max-w-[600px]";
   const plans = {
     monthly: [
       {
@@ -51,7 +51,7 @@ const Pricing = () => {
         title: "Basic",
         price: "Free",
         features: [
-          "40 videos per month",
+          "40 videos per year",
           "10 mins/video",
           "No watermark",
           "Quality and Complexity",
@@ -63,24 +63,24 @@ const Pricing = () => {
         title: "Creator",
         price: "$143.90",
         features: [
-          "40 videos per month",
-          "10 mins/video",
+          "60 videos per year",
+          "15 mins/video",
           "No watermark",
           "Quality and Complexity",
           "Duration of Video",
-          "Up to 3 users",
+          "Up to 5 users",
         ],
       },
       {
         title: "Pro",
         price: "$383.90",
         features: [
-          "40 videos per month",
-          "10 mins/video",
+          "80 videos per year",
+          "20 mins/video",
           "No watermark",
           "Quality and Complexity",
           "Duration of Video",
-          "Up to 3 users",
+          "Up to 8 users",
         ],
       },
     ],
@@ -113,11 +113,17 @@ const Pricing = () => {
             clarity matters as much as results.
           </p>
         </div>
-        <div className="text-xs sm:text-sm md:text-base font-medium font-geist bg-primary hover: shadow-[#a37ef229] shadow-[0_10px_10px_rgba(163_126_242_0.16)] border border-[#F9DEE380] inner_shadow p-1 rounded-[12px] cursor-pointer mt-8 flex item-center inline-block justify-center mt-10 md:mt-14 lg:mt-16">
+        <div
+          style={{
+            boxShadow:
+              "inset 0px 2px 3px 0px #FFFFFF1A, inset 0px 0px 6px 2px #A37EF21F, 0px 8px 12px 0px #A37EF229",
+          }}
+          className="text-xs sm:text-sm md:text-base font-medium font-geist bg-primary hover: shadow-[#a37ef229] border border-[#F9DEE380] inner_shadow p-1 rounded-[12px] cursor-pointer mt-8 flex item-center inline-block justify-center mt-10 md:mt-14 lg:mt-16"
+        >
           <div className="flex justify-center gap-2">
             <button
               onClick={() => setBilling("monthly")}
-              className={`px-[18px] py-3.5  rounded-[8px] cursor-pointer ${
+              className={`px-[18px] py-3.5  rounded-[8px] cursor-pointer font-medium ${
                 billing === "monthly"
                   ? "primary_gradient border-white text-blue0d"
                   : "border-[#D8DFF0D6] text-[#D8DFF0D6] bg-transparent"
@@ -147,7 +153,7 @@ const Pricing = () => {
             </button>
           </div>
         </div>
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-start">
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 text-start">
           {plans[billing].map((plan, index) => (
             <div
               key={index}
@@ -158,7 +164,7 @@ const Pricing = () => {
               } shadow-md`}
             >
               <div
-                className={`rounded-2xl p-6 ${
+                className={`rounded-2xl p-6 h-full ${
                   plan.title === "Creator"
                     ? "bg-gradient-to-b from-[#070707] to-[#14131A] border border-[#44436266] shadow-[inset_0_4px_10px_rgba(0_0_0_0.6)] relative overflow-hidden z-10 inner_shadow"
                     : "bg-gradient-to-b from-[#070707] to-[#14131A] border border-gray-700 border border-[#44436266] inner_shadow"
@@ -183,7 +189,7 @@ const Pricing = () => {
                   </span>
                 </p>
                 <button
-                  className={`w-full py-3.5 rounded-[12px] font-semibold font-geist text-sm md:text-base mt-5 md:mt-6 lg:mt-8 cursor-pointer ${
+                  className={`duration-300 hover:-translate-y-2 w-full py-3.5 rounded-[12px] font-semibold font-geist text-sm md:text-base mt-5 md:mt-6 lg:mt-8 cursor-pointer ${
                     plan.title === "Creator"
                       ? "primary_gradient text-blue0d"
                       : "bg-blue15 text-secondary border border-gray44"
@@ -216,7 +222,7 @@ const Pricing = () => {
 
         <div className="mt-6 md:mt-8 lg:mt-10 font-geist font-medium text-sm md:text-base lg:text-lg text-grayd8">
           Questions about enterprise or custom pricing?{" "}
-          <button className="mt-2 md:mt-0 md:ml-2 px-3 py-[9px] border border-[#F0A9D380] rounded-[8px] text-transparent bg-clip-text bg-gradient-to-r from-[#F0A9D3] via-[#F9DEE3] to-[#9691F2] cursor-pointer">
+          <button className="shadow-[0px_8px_8px_0px_#A37EF229] duration-300 hover:shadow-[0px_20px_20px_0px_#A37EF229] mt-2 md:mt-0 md:ml-2 px-3 py-[9px] border border-[#F0A9D380] rounded-[8px] text-transparent bg-clip-text bg-gradient-to-r from-[#F0A9D3] via-[#F9DEE3] to-[#9691F2] cursor-pointer text-base">
             Contact Sales
           </button>
         </div>

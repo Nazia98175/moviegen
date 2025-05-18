@@ -5,6 +5,7 @@ html,
 body {
   scroll-behavior: smooth;
   background-color: #05050e !important;
+  font-family: "Geist", sans-serif;
 }
 @theme {
   --color-primary: #0f0f27;

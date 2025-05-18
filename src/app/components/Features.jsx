@@ -34,7 +34,7 @@ const features = [
 ];
 
 const cardClass =
-  "flex-1 w-full md:w-[386px] h-[300px] bg-[#0D0D0D]/80 rounded-xl border border-[#444362]/52 p-6 flex flex-col gap-4 justify-between";
+  "flex-1 w-full md:w-[386px] h-[300px] bg-[#0D0D0D]/80 rounded-xl border border-[#444362]/52 p-6 flex flex-col gap-3 justify-between";
 
 const Features = () => {
   return (
@@ -43,14 +43,14 @@ const Features = () => {
       <div className="flex flex-col md:flex-row w-full max-w-[1020px] gap-6">
         <div className={cardClass}>
           <Image src={features[0].icon} alt="icon" width={32} height={32} />
-          <h3 className="!font-geist text-white text-base lg:text-lg font-semibold">
+          <h3 className="!font-geist text-secondary text-base font-semibold mt-3">
             {features[0].title}
           </h3>
-          <p className="!font-geist text-[#A1A1AA] text-xs md:text-sm">
+          <p className="!font-geist text-grayd8 text-xs md:text-sm">
             {features[0].description}
           </p>
           <div className="inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
-            <button className="!font-geist cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
+            <button className="duration-300 hover:!-translate-y-2 !font-geist cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
               Learn More
             </button>
           </div>
@@ -90,7 +90,7 @@ const Features = () => {
           <div className="p-[0.83px] rounded-xl bg-gradient-to-br from-[rgba(240,169,211,0.5)] via-[rgba(249,222,227,0.5)] to-[rgba(150,145,242,0.5)]">
             <div className="bg-gradient-to-br w-[200px] h-[200px] from-[#ffffff10] to-[#ffffff08] rounded-[calc(0.75rem-0.83px)] shadow-inner flex items-center justify-center">
               <div className="bg-[#05060E] p-4 w-[199px] h-[199px] rounded-[calc(0.75rem-0.83px)] flex items-center justify-center">
-                <Image
+                <Image className="max-w-[116px] w-full"
                   src="/images/svg/center-logo.svg"
                   alt="center logo"
                   width={60}
