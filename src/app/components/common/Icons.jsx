@@ -43,6 +43,7 @@ export const RedditIcon = () => {
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="rounded-full hover:shadow-[0px_0px_9.8px_1.4px_#8562E4CC] duration-300"
     >
       <circle cx="16" cy="16" r="15.5" stroke="#C9D3E8" />
       <path
@@ -62,6 +63,7 @@ export const TwitterIcon = () => {
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="rounded-full hover:shadow-[0px_0px_9.8px_1.4px_#8562E4CC] duration-300"
     >
       <circle cx="16" cy="16" r="15.5" stroke="#C9D3E8" />
       <path
@@ -79,6 +81,7 @@ export const GithubIcon = () => {
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="rounded-full hover:shadow-[0px_0px_9.8px_1.4px_#8562E4CC] duration-300"
     >
       <circle cx="16" cy="16" r="15.5" stroke="#C9D3E8" />
       <path
@@ -96,6 +99,7 @@ export const QIcon = () => {
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="rounded-full hover:shadow-[0px_0px_9.8px_1.4px_#8562E4CC] duration-300"
     >
       <circle cx="16" cy="16" r="15.5" stroke="#C9D3E8" />
       <path
@@ -115,6 +119,7 @@ export const InstaIcon = () => {
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="rounded-full hover:shadow-[0px_0px_9.8px_1.4px_#8562E4CC] duration-300"
     >
       <circle cx="16" cy="16" r="15.5" stroke="#C9D3E8" />
       <path

@@ -5,10 +5,9 @@ import { UnionIcon } from "./common/Icons";
 
 const GetStarted = () => {
   const heading = "common_heading";
-  const para = "common_para max-w-[550px] lg:max-w-[600px]";
   return (
     <>
-      <div className="relative pb-28">
+      <div className="relative">
         <Image
           className="absolute top-0"
           width="1441"
@@ -17,24 +16,24 @@ const GetStarted = () => {
           alt="dots"
         />
         <Image
-          className="absolute bottom-0 left-0"
+          className="absolute bottom-0 left-0 z-0 pointer-event-none"
           width="831"
           height="1090"
           src="/images/png/get-started-left-blur.png"
           alt="dots"
         />
         <Image
-          className="absolute bottom-0 right-0"
+          className="absolute bottom-0 right-0 z-0 pointer-event-none"
           width="831"
           height="1090"
           src="/images/png/get-started-right-blur.png"
           alt="dots"
         />
         <div
-          className="pt-16 md:pt-16 lg:pt-44 relative container flex flex-col 
+          className="pt-16 md:pt-16 lg:pt-44 pb-16 md:pb-20 lg:pb-26 relative container flex flex-col 
        items-center overflow-hidden"
         >
-          <div className="text-center">
+          <div className="text-center mx-auto max-w-[500px]">
             <Image
               className="text-center mx-auto"
               width="35"
@@ -42,16 +41,22 @@ const GetStarted = () => {
               src="/images/svg/union.svg"
               alt="union"
             />
-            <div className={heading}>
-              <h1>Professional Videos </h1>
-              <h2 className="text-[#E1E7F5]  md:pt-4">In Just a Few Clicks</h2>
+            <div className={`${heading}`}>
+              <h1 className="text-[36px] xl:flex tracking-[-1px] xl:flex-col xl:gap-4 md:text-[45px] lg:text-[56px] leading-[100%] w-fit">
+                Professional Videos{" "}
+                <span className="text-[#E1E7F5] tracking-[-1.60px] text-[36px] md:text-[45px] lg:text-[56px] leading-[100%] w-fit">
+                  In Just a Few Clicks
+                </span>
+              </h1>
             </div>
-            <p className={para}>
+            <p
+              className={`font-semibold pt-4 tracking-[-0.80px] text-sm md:text-base lg:text-lg text-grayd8`}
+            >
               Edit videos with AI, no software needed, just prompt. MovieGen
               turns your words into perfectly cut footage, no downloads,
               timelines, or plug-ins required.
             </p>
-            <button className="font-geist font-medium text-base px-3 py-3.5 primary_gradient border border-white rounded-[8px] cursor-pointer mt-10">
+            <button className="font-geist font-medium text-base px-3 py-3.5 primary_gradient border border-white rounded-[8px] cursor-pointer mt-12">
               Get Started Now
             </button>
           </div>
