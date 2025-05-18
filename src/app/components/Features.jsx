@@ -38,7 +38,7 @@ const cardClass =
 
 const Features = () => {
   return (
-    <section className="container pt-20 xl:pb-32 flex flex-col gap-3 md:gap-6 items-center relative px-2">
+    <section className="container pt-20 xl:pb-32 flex flex-col gap-3 lg:gap-6 items-center relative px-2">
       {/* Top Row */}
       <div className="flex flex-col md:flex-row w-full max-w-[1020px] gap-6">
         <div className={cardClass}>

@@ -46,7 +46,7 @@ const Testimonials = () => {
         </p>
 
         {/* Testimonials */}
-        <div className="grid md:grid-cols-3 gap-6 md:gap-3 lg:gap-8 relative mt-20">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-3 lg:gap-8 relative mt-6 md:mt-20">
           {testimonials.map((item, idx) => (
             <div
               key={idx}
