@@ -43,14 +43,14 @@ const Features = () => {
       <div className="flex flex-col md:flex-row w-full max-w-[1020px] gap-6">
         <div className={cardClass}>
           <Image src={features[0].icon} alt="icon" width={32} height={32} />
-          <h3 className="text-white text-base lg:text-lg font-semibold">
+          <h3 className="!font-geist text-white text-base lg:text-lg font-semibold">
             {features[0].title}
           </h3>
-          <p className="text-[#A1A1AA] text-xs md:text-sm">
+          <p className="!font-geist text-[#A1A1AA] text-xs md:text-sm">
             {features[0].description}
           </p>
           <div className="inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
-            <button className="cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
+            <button className="!font-geist cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
               Learn More
             </button>
           </div>
@@ -64,14 +64,14 @@ const Features = () => {
         </div>
         <div className={cardClass}>
           <Image src={features[1].icon} alt="icon" width={32} height={32} />
-          <h3 className="text-white text-base lg:text-lg font-semibold">
+          <h3 className="!font-geist text-white text-base lg:text-lg font-semibold">
             {features[1].title}
           </h3>
-          <p className="text-[#A1A1AA] text-xs md:text-sm">
+          <p className="!font-geist text-[#A1A1AA] text-xs md:text-sm">
             {features[1].description}
           </p>
           <div className="inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
-            <button className="cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
+            <button className="!font-geist cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
               Learn More
             </button>
           </div>
@@ -112,14 +112,14 @@ const Features = () => {
       <div className="flex w-full max-w-[1020px] gap-6 flex-col md:flex-row">
         <div className={cardClass}>
           <Image src={features[2].icon} alt="icon" width={32} height={32} />
-          <h3 className="text-white text-base lg:text-lg font-semibold">
+          <h3 className="!font-geist text-white text-base lg:text-lg font-semibold">
             {features[2].title}
           </h3>
-          <p className="text-[#A1A1AA] text-xs md:text-sm">
+          <p className="!font-geist text-[#A1A1AA] text-xs md:text-sm">
             {features[2].description}
           </p>
           <div className="inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
-            <button className="cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
+            <button className="!font-geist cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
               Learn More
             </button>
           </div>
@@ -133,14 +133,14 @@ const Features = () => {
         </div>
         <div className={cardClass}>
           <Image src={features[3].icon} alt="icon" width={32} height={32} />
-          <h3 className="text-white text-base lg:text-lg font-semibold">
+          <h3 className="!font-geist text-white text-base lg:text-lg font-semibold">
             {features[3].title}
           </h3>
-          <p className="text-[#A1A1AA] text-xs md:text-sm">
+          <p className="!font-geist text-[#A1A1AA] text-xs md:text-sm">
             {features[3].description}
           </p>
           <div className="inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
-            <button className="cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
+            <button className="!font-geist cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
               Learn More
             </button>
           </div>

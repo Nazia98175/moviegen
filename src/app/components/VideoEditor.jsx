@@ -3,8 +3,8 @@ import SectionTag from "./common/SectionTag";
 import VideoEditorCards from "./VideoEditorCards";
 
 const VideoEditor = () => {
-  const heading = "common_heading";
-  const para = "common_para max-w-[550px] lg:max-w-[700px]";
+  const heading = "common_heading !font-suisseintl !font-medium";
+  const para = "common_para max-w-[550px] lg:max-w-[700px] !font-geist";
   return (
     <>
       <div className="pt-20 md:pt-24 lg:pt-32 2xl:max-w-[1040px] 3xl:max-w-[1436px] mx-auto px-4 md:px-5 xl:px-0">

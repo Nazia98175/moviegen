@@ -2,7 +2,7 @@ import Image from "next/image";
 import SectionTag from "./common/SectionTag";
 
 const VideoEditorHero = () => {
-  const heading = "common_heading";
+  const heading = "common_heading !font-suisseintl !font-medium";
   return (
     <div className="mt-40 px-4 md:px-5 xl:px-0">
       <div className={heading}>
@@ -76,7 +76,7 @@ const VideoEditorHero = () => {
 
         {/* Bottom text */}
         <div className="relative z-10 max-w-2xl text-center max-w-[610px]">
-          <p className="text-[#D8DFF0CC] text-base lg:text-xl font-medium leading-[150%]">
+          <p className="text-[#D8DFF0CC] text-base lg:text-xl font-medium leading-[150%] !font-geist">
             Moviegen turns that chaos into a single chat bubble. Just type what
             you want “Trim the silence, punch-zoom on the laugh, match the
             colors to a 90s film vibe” and watch fully polished footage appear

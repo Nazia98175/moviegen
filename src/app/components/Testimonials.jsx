@@ -31,7 +31,8 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
-  const heading = "common_heading";
+  const heading = "common_heading !font-suisseintl !font-medium";
+  const para = "common_para max-w-[550px] lg:max-w-[700px] !font-geist";
   return (
     <section className="py-20 text-white text-center px-4">
       <div className="max-w-[1236px] mx-auto">
@@ -39,13 +40,13 @@ const Testimonials = () => {
           <SectionTag title="Trusted by Our Users" tagclass="hidden" />
           <h2 className="text-[#E1E7F5] pt-4">What Our Users Are Saying</h2>
         </div>
-        <p className="text-[#D8DFF0]/80 max-w-2xl mx-auto mb-12 mt-4 max-w-[560px] text-base lg:text-xl font-medium leading-[150%]">
+        <p className={para}>
           Lorem ipsum dolor sit amet consectetur. Etiam risus adipiscing etiam
           pellentesque. Lorem mauris convallis pretium imperdiet. At lorem.
         </p>
 
         {/* Testimonials */}
-        <div className="grid md:grid-cols-3 gap-6 md:gap-3 lg:gap-8 relative">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-3 lg:gap-8 relative mt-20">
           {testimonials.map((item, idx) => (
             <div
               key={idx}
@@ -90,8 +91,8 @@ const Testimonials = () => {
                   />
                 )}
 
-                <div className="bg-[#121218] h-full rounded-[12px] px-4 py-6 md:py-2 lg:py-6 flex flex-col relative z-10">
-                  <p className="text-sm mb-3 lg:mb-6 flex-grow text-left">
+                <div className="bg-[#121218] h-full rounded-[12px] px-4 md:px-2 lg:px-4 py-6 md:py-2 lg:py-6 flex flex-col relative z-10">
+                  <p className=" !font-geist text-sm mb-3 lg:mb-6 flex-grow text-left">
                     {item.content}
                   </p>
                   <div className="flex justify-between items-center">
@@ -105,10 +106,12 @@ const Testimonials = () => {
                         />
                       </div>
                       <div>
-                        <p className="font-semibold text-sm text-left">
+                        <p className=" !font-geist font-semibold text-sm text-left">
                           {item.name}
                         </p>
-                        <p className="text-xs text-[#A8A8A9]">{item.role}</p>
+                        <p className="text-xs text-[#A8A8A9]  !font-geist">
+                          {item.role}
+                        </p>
                       </div>
                     </div>
                     <Image
@@ -146,7 +149,7 @@ const Testimonials = () => {
           />
         </div>
 
-        <p className="text-sm text-[#838AA3] mt-14 mb-6">
+        <p className="text-sm text-[#838AA3] mt-14 mb-6  !font-geist">
           The world's best user plan with Moviegen
         </p>
 
