@@ -4,7 +4,6 @@ import SectionTag from "./common/SectionTag";
 import { UnionIcon } from "./common/Icons";
 
 const GetStarted = () => {
-  const heading = "common_heading";
   return (
     <>
       <div className="relative">
@@ -41,7 +40,7 @@ const GetStarted = () => {
               src="/images/svg/union.svg"
               alt="union"
             />
-            <div className={`${heading}`}>
+            <div className="common_heading">
               <h1 className="text-[36px] xl:flex tracking-[-1px] xl:flex-col xl:gap-4 md:text-[45px] lg:text-[56px] leading-[100%] w-fit">
                 Professional Videos{" "}
                 <span className="text-[#E1E7F5] tracking-[-1.60px] text-[36px] md:text-[45px] lg:text-[56px] leading-[100%] w-fit">
