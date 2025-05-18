@@ -55,7 +55,7 @@ const Testimonials = () => {
                 w-full max-w-[372px] mx-auto 
                 h-[210px] cursor-pointer hover:max-w-[428px] hover:[256px]
                 transition transform duration-500 
-                hover:scale-[1.15] 
+                hover:scale-[1.15]
                 ${item.highlighted ? "transform md:scale-100 text-white" : "text-[#D8DFF0B8]"}
               `}
             >
