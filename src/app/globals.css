@@ -143,3 +143,11 @@ body {
 .logo-shadow {
   @apply shadow-[0px_0px_9.8px_1.4px_#8562E4CC]
 }
+
+.swiper {
+  @apply !py-20
+}
+
+.swiper-slide-active>div{
+  @apply !h-[256px] bg-[#121218]
+}
