@@ -135,12 +135,12 @@ const Testimonials = () => {
           <img
             src="/images/svg/testimonial-blur-shadow-1.svg"
             alt="shadow-blur"
-            className="absolute z-10 right-60 transform -translate-y-0.5"
+            className="absolute z-0 right-60 transform -translate-y-0.5"
           />
           <img
             src="/images/svg/testimonial-blur-shadow-2.svg"
             alt="shadow-blur"
-            className="absolute z-10 right-80 transform -translate-y-1"
+            className="absolute z-0 right-80 transform -translate-y-1"
           />
           <img
             src="/images/svg/testimonial-blur-shadow-3.svg"
