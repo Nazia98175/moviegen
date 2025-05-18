@@ -6,112 +6,25 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
-import { TwitterIcon, X } from "./common/Icons";
-import SwiperCore from "swiper";
-
-const testimonials = [
-  {
-    name: "Floyd Miles",
-    icon: <X />,
-    role: "Founder at Wise",
-    companyLogo: "/images/svg/wise-logo.svg",
-    profile: "/images/svg/testimonial-profile.svg",
-    content:
-      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
-  },
-  {
-    name: "Floyd Miles",
-    icon: <X />,
-    role: "Founder at Revolut",
-    companyLogo: "/images/svg/revolut-logo.svg",
-    profile: "/images/svg/testimonial-profile.svg",
-    highlighted: true,
-    content:
-      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
-  },
-  {
-    name: "Floyd Miles",
-    icon: <X />,
-    role: "Founder at Wise",
-    companyLogo: "/images/svg/wise-logo.svg",
-    profile: "/images/svg/testimonial-profile.svg",
-    content:
-      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
-  },
-  {
-    name: "Floyd Miles",
-    icon: <X />,
-    role: "Founder at Wise",
-    companyLogo: "/images/svg/wise-logo.svg",
-    profile: "/images/svg/testimonial-profile.svg",
-    content:
-      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
-  },
-  {
-    name: "Floyd Miles",
-    icon: <X />,
-    role: "Founder at Wise",
-    companyLogo: "/images/svg/wise-logo.svg",
-    profile: "/images/svg/testimonial-profile.svg",
-    content:
-      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
-  },
-  {
-    name: "Floyd Miles",
-    icon: <X />,
-    role: "Founder at Wise",
-    companyLogo: "/images/svg/wise-logo.svg",
-    profile: "/images/svg/testimonial-profile.svg",
-    content:
-      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
-  },
-  {
-    name: "Floyd Miles",
-    icon: <X />,
-    role: "Founder at Wise",
-    companyLogo: "/images/svg/wise-logo.svg",
-    profile: "/images/svg/testimonial-profile.svg",
-    content:
-      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
-  },
-  {
-    name: "Floyd Miles",
-    icon: <X />,
-    role: "Founder at Wise",
-    companyLogo: "/images/svg/wise-logo.svg",
-    profile: "/images/svg/testimonial-profile.svg",
-    content:
-      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
-  },
-  {
-    name: "Floyd Miles",
-    role: "Founder at Wise",
-    companyLogo: "/images/svg/wise-logo.svg",
-    profile: "/images/svg/testimonial-profile.svg",
-    content:
-      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
-  },
-  {
-    name: "Floyd Miles",
-    role: "Founder at Wise",
-    companyLogo: "/images/svg/wise-logo.svg",
-    profile: "/images/svg/testimonial-profile.svg",
-    content:
-      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
-  },
-];
+import { testimonials } from "./common/Helper";
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const swiperRef = useRef;
+  const swiperRef = useRef(null);
 
   const handleIconClick = (index) => {
     setActiveIndex(index);
-    swiperRef.current?.slideTo(index);
+    if (swiperRef.current) {
+      if (swiperRef.current.loopedSlides) {
+        swiperRef.current.slideToLoop(index);
+      } else {
+        swiperRef.current.slideTo(index);
+      }
+    }
   };
 
   return (
-    <section className="py-20 text-white text-center px-4">
+    <section className="pt-20 text-white text-center px-4">
       <div className="max-w-[1236px] mx-auto">
         {/* Header */}
         <div className="common_heading !ff_suisseIntl_medium">
@@ -128,13 +41,15 @@ const Testimonials = () => {
           <Swiper
             modules={[Pagination]}
             pagination={false}
-            spaceBetween={30}
+            spaceBetween={50}
             slidesPerView={1.2}
             centeredSlides={true}
             loop={true}
+            // HELP IN CENTERMODE DURING PAGINATION
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             breakpoints={{
+              500: { slidesPerView: 1, centeredSlides: true },
               768: { slidesPerView: 2, centeredSlides: true },
               1024: { slidesPerView: 3, centeredSlides: true },
             }}
@@ -142,22 +57,20 @@ const Testimonials = () => {
           >
             {testimonials.map((item, idx) => (
               <SwiperSlide key={idx}>
-                {/* Slide Card Code */}
+                {/* SLIDES */}
                 <div
-                  className={`group rounded-[12px] overflow-hidden relative z-10 h-[210px] cursor-pointer transition-transform duration-500 hover:scale-[1.05] ${
-                    item.highlighted
+                  className={`group rounded-[12px] overflow-hidden relative z-10 h-[210px] cursor-pointer ${
+                    idx === activeIndex
                       ? "transform md:scale-100 text-white"
                       : "text-[#D8DFF0B8]"
                   }`}
                 >
                   <div
                     className={`relative h-full rounded-[12px] transition-all duration-300 ${
-                      item.highlighted
-                        ? ""
-                        : "border border-[#44436285] group-hover:border-transparent"
+                      item.highlighted ? "" : "border border-[#44436285]"
                     }`}
                     style={{
-                      ...(item.highlighted
+                      ...(idx === activeIndex
                         ? {
                             background:
                               "linear-gradient(91.18deg, rgba(240, 169, 211, 0.5) 0%, rgba(249, 222, 227, 0.5) 49.52%, rgba(150, 145, 242, 0.5) 100%)",
@@ -168,9 +81,9 @@ const Testimonials = () => {
                         : { boxShadow: "0px 0px 0px 1px #1B1A22" }),
                     }}
                   >
-                    {!item.highlighted && (
+                    {idx == activeIndex && (
                       <div
-                        className="absolute inset-0 rounded-[12px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        className="absolute inset-0 rounded-[12px] pointer-events-none transition-opacity duration-300"
                         style={{
                           background:
                             "linear-gradient(91.18deg, rgba(240, 169, 211, 0.5) 0%, rgba(249, 222, 227, 0.5) 49.52%, rgba(150, 145, 242, 0.5) 100%)",
@@ -222,21 +135,21 @@ const Testimonials = () => {
             ))}
           </Swiper>
 
-          {/* Blur Effects */}
+          {/* BACKGROUND GRADIENTS */}
           <img
             src="/images/svg/testimonial-blur-shadow-1.svg"
             alt="shadow-blur"
-            className="absolute z-0 pointer-event-none right-60 transform -translate-y-0.5"
+            className="absolute right-60 top-[96px] right-[250px] transform -translate-y-0.5"
           />
           <img
             src="/images/svg/testimonial-blur-shadow-2.svg"
             alt="shadow-blur"
-            className="absolute z-0 pointer-event-none right-80 transform -translate-y-1"
+            className="absolute top-[96px] right-[250px] transform -translate-y-1"
           />
           <img
             src="/images/svg/testimonial-blur-shadow-3.svg"
             alt="shadow-blur"
-            className="absolute z-0 pointer-event-none right-130 transform -translate-y-2/5"
+            className="absolute z-0 top-[42px] left-[221px] pointer-event-none transform -translate-y-2/5"
           />
         </div>
 
@@ -244,29 +157,32 @@ const Testimonials = () => {
           The world's best user plan with Moviegen
         </p>
 
-        {/* Twitter-style Pagination */}
-        {/* Twitter-style Pagination */}
-        <div className="flex md:flex-row relative z-10 justify-center gap-3 md:gap-8 items-center">
+        {/* PAGINATION */}
+        <div className="hidden sm:flex md:flex-row relative z-10 justify-center gap-3 lg:gap-8 items-center pb-2 flex-wrap">
           {testimonials.map((obj, index) => {
-            if (index >= testimonials.length - 2) return null;
+            const isActive = index === activeIndex;
             return (
               <div
                 key={index}
                 onClick={() => handleIconClick(index)}
-                className={`cursor-pointer transition-transform duration-300 hover:scale-110`}
+                className={`cursor-pointer transition-transform duration-300`}
               >
                 <div
-                  className="relative p-10 flex items-center justify-center"
-                  style={{
-                    background:
-                      "linear-gradient(91.18deg, rgba(240, 169, 211, 0.5) 0%, rgba(249, 222, 227, 0.5) 49.52%, rgba(150, 145, 242, 0.5) 100%)",
-                    padding: "1px",
-                    borderRadius: "9999px",
-                    boxShadow:
-                      "0px 0px 0px 1px #1B1A22, 0px 8px 8px 0px rgba(163, 126, 242, 0.16)",
-                  }}
+                  className={`${
+                    isActive && "scale-125"
+                  } relative !border-[#27262C] p-px rounded-full flex items-center justify-center duration-300`}
+                  style={
+                    isActive
+                      ? {
+                          background:
+                            "linear-gradient(91.18deg, rgba(240, 169, 211, 0.5) 0%, rgba(249, 222, 227, 0.5) 49.52%, rgba(150, 145, 242, 0.5) 100%)",
+                          boxShadow:
+                            "0px 0px 0px 1px #1B1A22, 0px 8px 8px 0px rgba(163, 126, 242, 0.16)",
+                        }
+                      : {}
+                  }
                 >
-                  <div className="size-12 rounded-full bg-[#121218] flex items-center justify-center">
+                  <div className="size-8 lg:size-12 border-[#2F2E34] border rounded-full bg-[#14131A] flex items-center justify-center">
                     {obj.icon}
                   </div>
                 </div>

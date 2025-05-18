@@ -6,6 +6,7 @@ body {
   scroll-behavior: smooth;
   background-color: #05050e !important;
   font-family: "Geist", sans-serif;
+  overflow-x: hidden;
 }
 
 @theme {
@@ -242,9 +243,9 @@ body {
 }
 
 .swiper {
-  @apply !py-20
+  @apply !py-12 lg:!py-20
 }
 
-.swiper-slide-active>div {
-  @apply !h-[256px] bg-[#121218]
+.swiper-slide-active>div{
+  @apply !scale-y-120 !scale-x-110 !duration-300 bg-[#121218]
 }
