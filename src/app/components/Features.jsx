@@ -34,7 +34,7 @@ const features = [
 ];
 
 const cardClass =
-  "flex-1 w-full md:w-[386px] h-[300px] bg-[#0D0D0D]/80 rounded-xl border border-[#444362]/52 p-6 flex flex-col gap-3 justify-between";
+  "flex-1 w-full md:w-[386px] h-[300px] bg-[#0D0D0D]/80 rounded-xl border border-[#444362]/52 p-6 flex flex-col gap-3 justify-between duration-300 hover:border-[#CD4FF6]";
 
 const Features = () => {
   return (
@@ -49,8 +49,8 @@ const Features = () => {
           <p className="!font-geist text-grayd8 text-xs md:text-sm">
             {features[0].description}
           </p>
-          <div className="inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
-            <button className="duration-300 hover:!-translate-y-2 !font-geist cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
+          <div className="duration-300 hover:-translate-y-2 inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
+            <button className="!font-geist cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
               Learn More
             </button>
           </div>
@@ -70,7 +70,7 @@ const Features = () => {
           <p className="!font-geist text-[#A1A1AA] text-xs md:text-sm">
             {features[1].description}
           </p>
-          <div className="inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
+          <div className="duration-300 hover:-translate-y-2 inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
             <button className="!font-geist cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
               Learn More
             </button>
@@ -118,7 +118,7 @@ const Features = () => {
           <p className="!font-geist text-[#A1A1AA] text-xs md:text-sm">
             {features[2].description}
           </p>
-          <div className="inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
+          <div className="duration-300 hover:-translate-y-2 inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
             <button className="!font-geist cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
               Learn More
             </button>
@@ -139,7 +139,7 @@ const Features = () => {
           <p className="!font-geist text-[#A1A1AA] text-xs md:text-sm">
             {features[3].description}
           </p>
-          <div className="inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
+          <div className="duration-300 hover:-translate-y-2 inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
             <button className="!font-geist cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
               Learn More
             </button>

@@ -66,7 +66,7 @@ const Footer = () => {
       </div>
       {/* PRIVACY AND POLICIES */}
       <div className="font-medium text-xs md:text-base text-gray83 mt-8 md:mt-12 lg:mt-16 xl:mt-20 flex flex-col md:flex-row items-center justify-between px-4 md:px-6 lg:px-10 gap-1 py-4 md:py-6 lg:py-8 bg-[#0A0A0F]">
-        <p className="leading-[100%] font-medium text-gray83 text-sm sm:text-base hover:text-transparent">
+        <p className="leading-[100%] font-medium text-gray83 text-sm sm:text-base">
           © Moviegen, 2025 — All rights reserved
         </p>
         <div className="flex justify-center gap-3 md:space-x-4 max-md:mt-3">
