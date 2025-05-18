@@ -114,7 +114,7 @@ const Testimonials = () => {
     <section className="py-20 text-white text-center px-4">
       <div className="max-w-[1236px] mx-auto">
         {/* Header */}
-        <div className="common_heading !font-suisseintl !font-medium">
+        <div className="common_heading !ff_suisseIntl_medium">
           <SectionTag title="Trusted by Our Users" tagclass="hidden" />
           <h2 className="text-[#E1E7F5] pt-4">What Our Users Are Saying</h2>
         </div>

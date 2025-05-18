@@ -90,7 +90,7 @@ const Features = () => {
           <div className="p-[0.83px] rounded-xl bg-gradient-to-br from-[rgba(240,169,211,0.5)] via-[rgba(249,222,227,0.5)] to-[rgba(150,145,242,0.5)]">
             <div className="bg-gradient-to-br w-[200px] h-[200px] from-[#ffffff10] to-[#ffffff08] rounded-[calc(0.75rem-0.83px)] shadow-inner flex items-center justify-center">
               <div className="bg-[#05060E] p-4 w-[199px] h-[199px] rounded-[calc(0.75rem-0.83px)] flex items-center justify-center">
-                <Image className="max-w-[116px] w-full"
+                <Image className="max-w-[116px] w-full animate-logo-pulse rounded-b-full rounded-[20px] overflow-hidden"
                   src="/images/svg/center-logo.svg"
                   alt="center logo"
                   width={60}

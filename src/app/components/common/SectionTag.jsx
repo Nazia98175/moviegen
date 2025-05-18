@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const SectionTag = ({ title, emoji, tagclass }) => {
+const SectionTag = ({ title, emoji, tagclass, emojiIcon }) => {
   const className =
     "text-sm lg:text-base font-inter-tight font-medium  text-transparent bg-clip-text bg-gradient-to-r from-[#F0A9D3] via-[#F9DEE3] to-[#9691F2]";
   return (
@@ -15,6 +15,7 @@ const SectionTag = ({ title, emoji, tagclass }) => {
           alt="emoji"
         />
       )}
+      {emojiIcon && emojiIcon}
       <h4 className={className}>{title}</h4>
     </div>
   );

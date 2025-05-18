@@ -2,7 +2,7 @@ import Image from "next/image";
 import SectionTag from "./common/SectionTag";
 
 const VideoEditorHero = () => {
-  const heading = "common_heading !font-suisseintl !font-medium";
+  const heading = "common_heading !ff_suisseIntl_medium xl:!text-[52px]";
   return (
     <section className="mt-20 lg:mt-40 px-4 md:px-5 xl:px-0 relative z-10">
       <div className="relative flex flex-col items-center justify-center overflow-visible mt-10">
@@ -35,7 +35,7 @@ const VideoEditorHero = () => {
               tagclass="hidden"
             />
             <div className={heading}>
-              <h1 className="text-center">Experience AI Editing</h1>
+              <h2 className="text-center">Experience AI Editing</h2>
               <h2 className="text-[#E1E7F5] text-center md:pt-4 ">
                 That Feels Like Magic.
               </h2>
