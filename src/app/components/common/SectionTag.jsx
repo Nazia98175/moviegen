@@ -7,13 +7,15 @@ const SectionTag = ({ title, emoji, tagclass }) => {
   return (
     <>
       <div className="flex items-center justify-center  py-3 py-2.5 border border-lightpurple44 gap-x-2 bg-primary w-full max-w-[300px] mx-auto rounded-[10px] shadow-[0_35px_35px_rgba(163_126_242_0.16)]">
-        <Image
-          className={tagclass}
-          width="18"
-          height="18"
-          src={emoji}
-          alt="emoji"
-        />
+        {emoji && (
+          <Image
+            className={tagclass}
+            width={18}
+            height={18}
+            src={emoji}
+            alt="emoji"
+          />
+        )}
         <h4 className={className}>{title}</h4>
       </div>
     </>
