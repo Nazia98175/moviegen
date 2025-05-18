@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import MobileHeader from "./MobileHeader";
 import Image from "next/image";
-import { HamburgerIcon } from "./common/Icons";
+import { DownArrow, HamburgerIcon } from "./common/Icons";
 import { navList } from "./common/Helper";
 
 const Header = () => {
@@ -12,7 +12,7 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
   const className =
-    "pb-0.5 font-medium  text-base lg:text-lg flex gap-x-2 text-graya7 transition-all ease-in-out relative after:absolute after:left-0 after:bottom-0 after:w-0 after:hover:w-full after:h-0.5 after:bg-graya7 after:duration-300 duration-300 cursor-pointer font-geist";
+    "pb-0.5 font-medium  text-base lg:text-lg flex gap-x-2 text-graya7 transition-all ease-in-out relative after:absolute after:left-0 after:bottom-0 after:w-0 after:hover:w-full after:h-0.5 after:bg-graya7 after:duration-300 duration-300 cursor-pointer font-geist hover:text-[#CD4FF6] flex items-center gap-2 group";
   useEffect(() => {
     const html = document.documentElement;
     if (isOpen) {
@@ -60,7 +60,7 @@ const Header = () => {
           src="/images/png/blurrblob-head-right.png"
           alt="blurr blob"
         />
-        <div className="relative z-50 py-3 sm:py-5 xl:py-10 container px-4 md:px-5 xl:px-0 mx-auto">
+        <div className="relative z-50 py-3 sm:py-5 xl:py-8 container px-4 md:px-5 xl:px-0 mx-auto">
           <div className="flex justify-between items-center">
             <div className="flex justify-center gap-x-[52px] items-center">
               <Link href="/">
@@ -83,27 +83,44 @@ const Header = () => {
                       setOpenDropdown(openDropdown === index ? null : index)
                     }
                   >
-                    <button className={className}>
+                    <button
+                      className={` ${
+                        openDropdown === index ? "!text-[#CD4FF6]" : ""
+                      } ${className}`}
+                    >
                       {obj.title}{" "}
                       {obj.submenu && (
-                        <Image
-                          unoptimized
-                          className="pt-0.5"
-                          width="10"
-                          height="10"
-                          src="/images/svg/dropdown-icon.svg"
-                          alt="logo-image"
-                        />
+                        <span
+                          className={`duration-300 ${
+                            openDropdown === index ? "rotate-180" : ""
+                          }`}
+                        >
+                          <DownArrow
+                            className={`group-hover:stroke-[#CD4FF6] duration-300 ${
+                              openDropdown === index ? "stroke-[#CD4FF6]" : ""
+                            }`}
+                          />
+                        </span>
+                        // <Image
+                        //   unoptimized
+                        //   className="pt-0.5"
+                        //   width="10"
+                        //   height="10"
+                        //   src="/images/svg/dropdown-icon.svg"
+                        //   alt="logo-image"
+                        // />
                       )}
                     </button>
 
                     {obj.submenu && openDropdown === index && (
-                      <div className="absolute top-full left-0 mt-2 w-44 bg-grayd8 rounded shadow-lg z-50 cursor-pointer">
+                      <div className="absolute top-full left-0 mt-2 w-44 bg-primary rounded shadow-lg z-50 cursor-pointer overflow-hidden shadow-sm shadow-white">
                         {obj.submenu.map((item, i) => (
                           <Link
                             key={i}
                             href={item.url}
-                            className="block px-4 py-2 text-sm text-white hover:bg-secondary"
+                            className={`block px-4 py-2 text-sm text-white hover:bg-[#CD4FF6] duration-300 ${
+                              i !== 0 && "border-t border-white/20"
+                            }`}
                           >
                             {item.title}
                           </Link>

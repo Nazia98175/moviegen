@@ -4,8 +4,8 @@ import Image from "next/image";
 import Header from "./Header";
 
 const Hero = () => {
-  const heading = "common_heading";
-  const para = "common_para max-w-[550px] lg:max-w-[700px]";
+  const heading = "common_heading !font-suisseintl !font-medium";
+  const para = "common_para max-w-[550px] lg:max-w-[700px] !font-geist";
   return (
     <>
       <div className="relative">
@@ -18,7 +18,7 @@ const Hero = () => {
         />
         <Header />
         <div
-          className="pt-16 md:pt-16 lg:pt-24 relative container flex flex-col 
+          className="pt-14 relative container flex flex-col 
        items-center overflow-hidden"
         >
           <SectionTag

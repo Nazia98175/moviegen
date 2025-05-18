@@ -126,3 +126,24 @@ export const InstaIcon = () => {
     </svg>
   );
 };
+export const DownArrow = ({ className }) => {
+  return (
+    <svg
+      width="10"
+      height="6"
+      viewBox="0 0 10 6"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        className={className}
+        d="M1 1L5 5L9 1"
+        stroke="#A7B1D6"
+        strokeOpacity="0.8"
+        strokeWidth="1.33333"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
