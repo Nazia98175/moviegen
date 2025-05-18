@@ -56,7 +56,11 @@ const Testimonials = () => {
                 h-[210px] cursor-pointer hover:max-w-[428px] hover:[256px]
                 transition transform duration-500 
                 hover:scale-[1.15] 
-                ${item.highlighted ? "transform md:scale-100 text-white" : "text-[#D8DFF0B8]"}
+                ${
+                  item.highlighted
+                    ? "transform md:scale-100 text-white"
+                    : "text-[#D8DFF0B8]"
+                }
               `}
             >
               <div
@@ -160,11 +164,14 @@ const Testimonials = () => {
             const showOnMobile = i >= 3 && i <= 5;
             return (
               <div
+                key={i}
                 className={`${
                   i === 4
                     ? "p-10 flex items-center justify-center relative cursor-pointer"
                     : "flex items-center justify-center cursor-pointer"
-                } ${!showOnMobile ? "hidden md:flex" : ""} transition-transform duration-300 hover:scale-110`}
+                } ${
+                  !showOnMobile ? "hidden md:flex" : ""
+                } transition-transform duration-300 hover:scale-110`}
               >
                 {i === 4 ? (
                   <div
