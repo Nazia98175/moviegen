@@ -98,8 +98,13 @@ const Testimonials = () => {
                         }}
                       />
                     )}
-
-                    <div className="bg-[#121218] h-full rounded-[12px] px-4 md:px-2 lg:px-4 py-6 md:py-2 lg:py-6 flex flex-col relative z-10">
+                    <div
+                      className={`${idx !== activeIndex && "border-[#44436285] border shadow-[0px_0px_0px_1px_#1B1A22]"} h-full rounded-[12px] px-4 md:px-2 lg:px-4 py-6 md:py-2 lg:py-6 flex flex-col relative z-10`}
+                      style={{
+                        background:
+                          "linear-gradient(0deg, #070707 0%, #14131A 100%)",
+                      }}
+                    >
                       <p
                         className={`${
                           idx === activeIndex && "!text-[#C9D3E8] text-lg"
