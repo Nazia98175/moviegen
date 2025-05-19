@@ -28,15 +28,21 @@ const Testimonials = () => {
       <div className="max-w-[1236px] mx-auto">
         {/* HEADER */}
         <div className="common_heading !font-suisseintl !font-medium">
-          <SectionTag title="Trusted by Our Users" tagclass="hidden" />
-          <h2 className="text-[#E1E7F5] pt-4">What Our Users Are Saying</h2>
+          <SectionTag
+            className="!py-2"
+            title="Trusted by Our Users"
+            tagclass="hidden"
+          />
+          <h2 className="text-[#E1E7F5] tracking-[-1.60px] text-[36px] md:text-[45px] lg:text-[56px] leading-[100%] text-center font-medium mt-8 tracking-[-2px]">
+            What Our Users Are Saying
+          </h2>
         </div>
-        <p className="common_para max-w-[550px] lg:max-w-[700px] !font-geist">
+        <p className="text-lg leading-[150%] mt-5 mx-auto text-[#AEB4C3] tracking-[-1px] font-medium max-w-[560px] w-full !font-geist">
           Lorem ipsum dolor sit amet consectetur. Etiam risus adipiscing etiam
           pellentesque. Lorem mauris convallis pretium imperdiet. At lorem.
         </p>
 
-        {/* Swiper */}
+        {/* SWIPER SLIDER */}
         <div className="relative">
           <Swiper
             modules={[Pagination]}
@@ -45,7 +51,7 @@ const Testimonials = () => {
             slidesPerView={1.2}
             centeredSlides={true}
             loop={true}
-            // HELP IN CENTERMODE DURING PAGINATION
+            // HELP IN CENTERMODE DURING PAGINATION OR ICONS HANDLING
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             breakpoints={{
@@ -58,7 +64,7 @@ const Testimonials = () => {
               <SwiperSlide key={idx}>
                 {/* SLIDES */}
                 <div
-                  className={`group rounded-[12px] overflow-hidden relative z-10 h-[210px] cursor-pointer ${
+                  className={`group rounded-[12px] overflow-hidden relative z-10 cursor-pointer h-[210px] ${
                     idx === activeIndex
                       ? "transform md:scale-100 text-white"
                       : "text-[#D8DFF0B8]"
@@ -93,7 +99,11 @@ const Testimonials = () => {
                     )}
 
                     <div className="bg-[#121218] h-full rounded-[12px] px-4 md:px-2 lg:px-4 py-6 md:py-2 lg:py-6 flex flex-col relative z-10">
-                      <p className="!font-geist text-sm mb-3 lg:mb-6 flex-grow text-left">
+                      <p
+                        className={`${
+                          idx === activeIndex && "!text-[#C9D3E8] text-lg"
+                        } leading-[145%] !font-geist text-sm mb-3 xl:mb-11 lg:mb-6 flex-grow text-left`}
+                      >
                         {item.content}
                       </p>
                       <div className="flex justify-between items-center h-fit">
@@ -127,6 +137,17 @@ const Testimonials = () => {
                           }
                         />
                       </div>
+                      {idx == activeIndex && (
+                        <div
+                          className="left-[188px] max-xl:hidden -top-[75px] rotate-90 relative z-50"
+                          style={{
+                            background:
+                              "linear-gradient(90deg, rgba(39, 39, 63, 0) 0.03%, rgba(48, 54, 147, 0.5) 28.15%, #4048B9 51.05%, rgba(48, 54, 147, 0.5) 74.48%, rgba(33, 33, 55, 0) 100%)",
+                            padding: "1px",
+                            zIndex: 1,
+                          }}
+                        ></div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -152,12 +173,12 @@ const Testimonials = () => {
           />
         </div>
 
-        <p className="text-base md:text-lg text-[#838AA3] mb-6 !font-geist">
+        <p className="text-base md:text-lg text-[#838AA3] mb-6 lg:mb-11 !font-geist">
           The world's best user plan with Moviegen
         </p>
 
         {/* PAGINATION */}
-        <div className="flex md:flex-row relative z-10 justify-center gap-3 md:gap-8 items-center pb-2 flex-wrap">
+        <div className="flex md:flex-row relative z-10 justify-center gap-3 md:gap-8 items-center pb-8 flex-wrap">
           {testimonials.map((obj, index) => {
             const isActive = index === activeIndex;
             return (
@@ -168,7 +189,7 @@ const Testimonials = () => {
               >
                 <div
                   className={`${
-                    isActive && "scale-125"
+                    isActive && "scale-110 lg:scale-[1.6667]"
                   } relative !border-[#27262C] p-px rounded-full flex items-center justify-center`}
                   style={
                     isActive
