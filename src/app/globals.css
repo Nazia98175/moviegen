@@ -6,7 +6,9 @@ body {
   scroll-behavior: smooth;
   background-color: #05050e !important;
   font-family: "Geist", sans-serif;
+  overflow-x: hidden;
 }
+
 @theme {
   --color-primary: #0f0f27;
   --color-secondary: #e1e7f5;
@@ -30,55 +32,70 @@ body {
   --font-inter-tight: "Inter Tight", sans-serif;
   --font-spline-sans-mono: "Spline Sans Mono", monospace;
 }
+
 @font-face {
   font-family: "SuisseIntl";
   src: url("/public/fonts/SuisseIntl-Light.ttf") format("ttf");
   font-weight: 300;
   font-style: normal;
 }
+
 @font-face {
   font-family: "SuisseIntl";
   src: url("/public/fonts/SuisseIntl-Regular.ttf") format("ttf");
   font-weight: 400;
   font-style: normal;
 }
+
 @font-face {
-  font-family: "SuisseIntl";
+  font-family: "SuisseIntl Medium";
   src: url("/public/fonts/SuisseIntl-Medium.ttf") format("ttf");
   font-weight: 500;
   font-style: normal;
 }
+
 @font-face {
   font-family: "SuisseIntl";
   src: url("/public/fonts/SuisseIntl-SemiBold.ttf") format("ttf");
   font-weight: 600;
   font-style: normal;
 }
+
 @font-face {
   font-family: "SuisseIntl";
   src: url("/public/fonts/SuisseIntl-Bold.ttf") format("ttf");
   font-weight: 700;
   font-style: normal;
 }
+
+.ff_suisseIntl_medium {
+  font-family: "SuisseIntl Medium" !important;
+}
+
 .ff_sussie {
   font-family: "SuisseIntl";
 }
+
 .inner_shadow {
   box-shadow: inset 0 4px 10px rgba(163, 126, 242, 0.12);
 }
+
 .container {
   @apply max-w-[1150px] 2xl:max-w-[1200px] 3xl:max-w-[1536px] mx-auto px-4 md:px-5 xl:px-0;
 }
+
 .common_heading {
   @apply text-[36px] md:text-[45px] lg:text-[55px] xl:text-[64px] font-geist font-medium text-transparent bg-clip-text bg-gradient-to-r from-[#F0A9D3] via-[#F9DEE3] to-[#9691F2] pt-5 md:pt-6 lg:pt-8 mx-auto max-w-[1000px] leading-[45px] md:leading-[100%];
 }
+
 .common_para {
-  @apply text-base lg:text-xl font-medium text-[#D8DFF0] opacity-80 pt-3 md:pt-4 lg:pt-6  mx-auto;
+  @apply text-base lg:text-xl font-medium text-[#D8DFF0] opacity-80 pt-3 md:pt-4 lg:pt-6 mx-auto;
 }
 
 .primary_gradient {
   background: linear-gradient(to right, #f0a9d3 0%, #f9dee3 50%, #9691f2 100%);
 }
+
 @layer utilities {
   .stroke-text-white {
     color: white;
@@ -92,36 +109,117 @@ body {
     text-stroke: 1px #0d0c0f;
   }
 }
+
 .gradient-border {
   position: relative;
-  padding: 1px; /* for the gradient outline */
-  background: linear-gradient(
-    180deg,
-    rgba(68, 67, 98, 0) 0%,
-    rgba(68, 67, 98, 0.52) 100%
-  );
+  padding: 1px;
+  /* for the gradient outline */
+  background: linear-gradient(180deg,
+      rgba(68, 67, 98, 0) 0%,
+      rgba(68, 67, 98, 0.52) 100%);
 }
-.gradient-border > .content {
+
+.gradient-border>.content {
   /* slightly less */
-  background: linear-gradient(
-    180deg,
-    rgba(5, 6, 14, 0.2) 0%,
-    rgba(5, 6, 14, 1) 0%
-  );
-  padding: 12px; /* Your content padding */
+  background: linear-gradient(180deg,
+      rgba(5, 6, 14, 0.2) 0%,
+      rgba(5, 6, 14, 1) 0%);
+  padding: 12px;
+  /* Your content padding */
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* grid-cols-3 */
-  gap: 1rem; /* gap-4 */
-  grid-auto-flow: row; /* grid-flow-row */
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-cols-3 */
+  gap: 1rem;
+  /* gap-4 */
+  grid-auto-flow: row;
+  /* grid-flow-row */
 }
 
 .box {
-  padding: 1.25rem; /* p-5 */
+  padding: 1.25rem;
+  /* p-5 */
   text-align: center;
   background-color: white;
+}
+
+@keyframes logo-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+}
+
+.animate-logo-pulse {
+  animation: logo-pulse 2s ease-in-out infinite;
+}
+
+.common-button {
+  font-weight: 600;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.25rem;
+  color: #0D0C0F;
+  background: linear-gradient(96.84deg, #F0A9D3 0%, #F9DEE3 50.48%, #9691F2 100%);
+  border: 1px solid white;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.common-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 0;
+  background: white;
+  transition: all 0.4s ease-in-out;
+  z-index: 1;
+}
+
+.common-button:hover::after {
+  left: 0;
+  right: auto;
+  width: 100%;
+}
+
+.common-button span {
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease-in-out;
+}
+
+.common-button:hover span {
+  color: var(--primary);
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Positioning the grid items like Tailwind utility classes */

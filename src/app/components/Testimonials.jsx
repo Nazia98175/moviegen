@@ -24,7 +24,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="pt-20 text-white text-center px-4 overflow-hidden">
+    <section className="pt-20 text-white text-center px-4">
       <div className="max-w-[1236px] mx-auto">
         {/* HEADER */}
         <div className="common_heading !font-suisseintl !font-medium">
@@ -55,6 +55,7 @@ const Testimonials = () => {
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             breakpoints={{
+              500: { slidesPerView: 1, centeredSlides: true },
               768: { slidesPerView: 2, centeredSlides: true },
               1024: { slidesPerView: 3, centeredSlides: true },
             }}

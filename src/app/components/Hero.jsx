@@ -4,7 +4,7 @@ import Image from "next/image";
 import Header from "./Header";
 
 const Hero = () => {
-  const heading = "common_heading !font-suisseintl !font-medium";
+  const heading = "common_heading !ff_suisseIntl_medium";
   const para = "common_para max-w-[550px] lg:max-w-[700px] !font-geist";
   return (
     <>
@@ -21,10 +21,7 @@ const Hero = () => {
           className="pt-14 relative container flex flex-col 
        items-center overflow-hidden"
         >
-          <SectionTag
-            title="Welcome to Moviegen new version"
-            emoji="/images/png/start-emoji.png"
-          />
+          <SectionTag title="Welcome to Moviegen new version" emojiIcon="🤩" />
           <div className="text-center">
             <div className={heading}>
               <h1>New Era of Edit Videos With AI. </h1>
@@ -54,6 +51,7 @@ const Hero = () => {
             />
             <Image
               className="content rounded-[14px] md:rounded-[18px] lg:rounded-[24px]"
+              unoptimized
               width="1020"
               height="620"
               src="/images/webp/hero-video-editor.webp"
