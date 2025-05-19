@@ -86,7 +86,7 @@ const Pricing = () => {
     ],
   };
   return (
-    <div className="relative pt-28 md:pt-32 lg:pt-40 xl:pt-50">
+    <div className="relative pt-10 md:pt-16 lg:pt-24 xl:pt-32">
       <Image
         className="absolute top-0 z-0"
         width="1440"
