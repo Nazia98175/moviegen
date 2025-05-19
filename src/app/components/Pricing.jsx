@@ -164,7 +164,7 @@ const Pricing = () => {
               } shadow-md`}
             >
               <div
-                className={`rounded-2xl p-6 h-full ${
+                className={`rounded-2xl p-4 lg:p-6 h-full ${
                   plan.title === "Creator"
                     ? "bg-gradient-to-b from-[#070707] to-[#14131A] border border-[#44436266] shadow-[inset_0_4px_10px_rgba(0_0_0_0.6)] relative overflow-hidden z-10 inner_shadow"
                     : "bg-gradient-to-b from-[#070707] to-[#14131A] border border-gray-700 border border-[#44436266] inner_shadow"

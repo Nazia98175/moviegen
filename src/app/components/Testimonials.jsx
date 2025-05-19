@@ -184,7 +184,7 @@ const Testimonials = () => {
         </p>
 
         {/* PAGINATION */}
-        <div className="flex md:flex-row relative z-10 justify-center gap-3 md:gap-8 items-center pb-8 flex-wrap">
+        <div className="hidden sm:flex md:flex-row relative z-10 justify-center gap-3 md:gap-8 items-center pb-8 flex-wrap">
           {testimonials.map((obj, index) => {
             const isActive = index === activeIndex;
             return (
@@ -196,7 +196,7 @@ const Testimonials = () => {
                 <div
                   className={`${
                     isActive && "scale-110 lg:scale-[1.6667]"
-                  } relative !border-[#27262C] p-px rounded-full flex items-center justify-center`}
+                  } relative !border-[#27262C] p-px rounded-full flex items-center justify-center duration-300`}
                   style={
                     isActive
                       ? {
