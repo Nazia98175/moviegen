@@ -34,22 +34,22 @@ const features = [
 ];
 
 const cardClass =
-  "flex-1 w-full md:w-[386px] h-[300px] bg-[#0D0D0D]/80 rounded-xl border border-[#444362]/52 p-6 flex flex-col gap-4 justify-between";
+  "flex-1 w-full md:w-[386px] h-[300px] bg-[#0D0D0D]/80 rounded-xl border border-[#444362]/52 p-6 flex flex-col gap-3 justify-between duration-300 hover:border-[#CD4FF6]";
 
 const Features = () => {
   return (
-    <section className="container pt-20 xl:pb-32 flex flex-col gap-3 lg:gap-6 items-center relative px-2">
+    <section className="container pt-6 sm:pt-10 xl:pt-20 xl:pb-32 flex flex-col gap-4 md:gap-6 items-center relative px-2">
       {/* Top Row */}
-      <div className="flex flex-col md:flex-row w-full max-w-[1020px] gap-6">
+      <div className="flex flex-col md:flex-row w-full max-w-[1020px] gap-4 sm:gap-6">
         <div className={cardClass}>
           <Image src={features[0].icon} alt="icon" width={32} height={32} />
-          <h3 className="!font-geist text-white text-base lg:text-lg font-semibold">
+          <h3 className="!font-geist text-secondary text-base font-semibold mt-3">
             {features[0].title}
           </h3>
-          <p className="!font-geist text-[#A1A1AA] text-xs md:text-sm">
+          <p className="!font-geist text-grayd8 text-xs md:text-sm">
             {features[0].description}
           </p>
-          <div className="inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
+          <div className="duration-300 hover:-translate-y-2 inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
             <button className="!font-geist cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
               Learn More
             </button>
@@ -70,7 +70,7 @@ const Features = () => {
           <p className="!font-geist text-[#A1A1AA] text-xs md:text-sm">
             {features[1].description}
           </p>
-          <div className="inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
+          <div className="duration-300 hover:-translate-y-2 inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
             <button className="!font-geist cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
               Learn More
             </button>
@@ -78,8 +78,8 @@ const Features = () => {
         </div>
       </div>
       {/* Middle Row */}
-      <div className="flex w-full max-w-[1020px] ">
-        <div className="hidden lg:flex items-center justify-center">
+      <div className="hidden lg:flex w-full max-w-[1020px] ">
+        <div className="flex items-center justify-center">
           <img
             src="/images/svg/rectangle-2.svg"
             alt="rectangle-2"
@@ -90,7 +90,7 @@ const Features = () => {
           <div className="p-[0.83px] rounded-xl bg-gradient-to-br from-[rgba(240,169,211,0.5)] via-[rgba(249,222,227,0.5)] to-[rgba(150,145,242,0.5)]">
             <div className="bg-gradient-to-br w-[200px] h-[200px] from-[#ffffff10] to-[#ffffff08] rounded-[calc(0.75rem-0.83px)] shadow-inner flex items-center justify-center">
               <div className="bg-[#05060E] p-4 w-[199px] h-[199px] rounded-[calc(0.75rem-0.83px)] flex items-center justify-center">
-                <Image
+                <Image className="max-w-[116px] w-full animate-logo-pulse rounded-b-full rounded-[20px] overflow-hidden"
                   src="/images/svg/center-logo.svg"
                   alt="center logo"
                   width={60}
@@ -109,7 +109,7 @@ const Features = () => {
         </div>
       </div>
       {/* Bottom Row */}
-      <div className="flex w-full max-w-[1020px] gap-6 flex-col md:flex-row">
+      <div className="flex w-full max-w-[1020px] gap-4 sm:gap-6 flex-col md:flex-row">
         <div className={cardClass}>
           <Image src={features[2].icon} alt="icon" width={32} height={32} />
           <h3 className="!font-geist text-white text-base lg:text-lg font-semibold">
@@ -118,7 +118,7 @@ const Features = () => {
           <p className="!font-geist text-[#A1A1AA] text-xs md:text-sm">
             {features[2].description}
           </p>
-          <div className="inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
+          <div className="duration-300 hover:-translate-y-2 inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
             <button className="!font-geist cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
               Learn More
             </button>
@@ -139,7 +139,7 @@ const Features = () => {
           <p className="!font-geist text-[#A1A1AA] text-xs md:text-sm">
             {features[3].description}
           </p>
-          <div className="inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
+          <div className="duration-300 hover:-translate-y-2 inline-block rounded-[6px] w-fit p-[1px] bg-[linear-gradient(91.18deg,rgba(240,169,211,0.5)_0%,rgba(249,222,227,0.5)_49.52%,rgba(150,145,242,0.5)_100%)] mt-auto">
             <button className="!font-geist cursor-pointer text-[#D8DFF0]/84 px-[10px] py-[5px] flex items-center justify-center rounded-[6px] bg-[#181825] text-xs md:text-sm font-medium shadow-[inset_0px_2px_3px_0px_rgba(255,255,255,0.10),inset_0px_0px_6px_2px_rgba(163,126,242,0.12),0px_8px_12px_0px_rgba(163,126,242,0.16)]">
               Learn More
             </button>

@@ -2,10 +2,10 @@ import Image from "next/image";
 import SectionTag from "./common/SectionTag";
 
 const VideoEditorHero = () => {
-  const heading = "common_heading !font-suisseintl !font-medium";
+  const heading = "common_heading !ff_suisseIntl_medium xl:!text-[52px]";
   return (
-    <div className="mt-40 px-4 md:px-5 xl:px-0">
-      <section className="relative flex flex-col items-center justify-center overflow-visible mt-10">
+    <section className="mt-20 lg:mt-40 px-4 md:px-5 xl:px-0 relative z-10">
+      <div className="relative flex flex-col items-center justify-center overflow-visible mt-10">
         <Image
           className="absolute bottom-28 -left-20 m-auto opacity-80"
           width="2560"
@@ -31,11 +31,11 @@ const VideoEditorHero = () => {
         <div className="relative">
           <div className={heading}>
             <SectionTag
-              title="Welcome to Moviegen new version"
+              title="Trusted by Our Users"
               tagclass="hidden"
             />
             <div className={heading}>
-              <h1 className="text-center">Experience AI Editing</h1>
+              <h2 className="text-center">Experience AI Editing</h2>
               <h2 className="text-[#E1E7F5] text-center md:pt-4 ">
                 That Feels Like Magic.
               </h2>
@@ -50,7 +50,7 @@ const VideoEditorHero = () => {
                   className="bg-[#0F0E1A] border border-[#8A6FC4] text-white rounded-2xl px-5 py-3 mb-2 lg:mb-4 text-sm max-w-xs shadow-xl relative"
                   style={{ boxShadow: "0 0 12px rgba(138, 111, 196, 0.4)" }}
                 >
-                  <p className="mb-4 xl:mb-10">
+                  <p className="mb-4 xl:mb-10 text-nowrap">
                     Shorten the intro to 3 seconds|
                   </p>
                 </div>
@@ -76,7 +76,7 @@ const VideoEditorHero = () => {
             </div>
             <img
               src="/images/svg/trusted-users-image.svg"
-              className="relative z-10 mt-16"
+              className="relative z-10 mt-6 sm:mt-10 lg:mt-16"
             />
           </div>
 
@@ -90,8 +90,8 @@ const VideoEditorHero = () => {
             </p>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

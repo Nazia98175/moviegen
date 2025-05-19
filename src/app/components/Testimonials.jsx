@@ -1,225 +1,217 @@
-import React from "react";
+"use client";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import SectionTag from "./common/SectionTag";
-
-const testimonials = [
-  {
-    name: "Floyd Miles",
-    role: "Founder at Wise",
-    companyLogo: "/images/svg/wise-logo.svg",
-    profile: "/images/svg/testimonial-profile.svg",
-    content:
-      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
-  },
-  {
-    name: "Floyd Miles",
-    role: "Founder at Revolut",
-    companyLogo: "/images/svg/revolut-logo.svg",
-    profile: "/images/svg/testimonial-profile.svg",
-    highlighted: true,
-    content:
-      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
-  },
-  {
-    name: "Floyd Miles",
-    role: "Founder at Wise",
-    companyLogo: "/images/svg/wise-logo.svg",
-    profile: "/images/svg/testimonial-profile.svg",
-    content:
-      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
-  },
-];
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+import { testimonials } from "./common/Helper";
 
 const Testimonials = () => {
-  const heading = "common_heading !font-suisseintl !font-medium";
-  const para = "common_para max-w-[550px] lg:max-w-[700px] !font-geist";
+  const [activeIndex, setActiveIndex] = useState(0);
+  const swiperRef = useRef(null);
+
+  const handleIconClick = (index) => {
+    setActiveIndex(index);
+    if (swiperRef.current) {
+      if (swiperRef.current.loopedSlides) {
+        swiperRef.current.slideToLoop(index);
+      } else {
+        swiperRef.current.slideTo(index);
+      }
+    }
+  };
+
   return (
-    <section className="py-20 text-white text-center px-4">
+    <section className="pt-20 text-white text-center px-4">
       <div className="max-w-[1236px] mx-auto">
-        <div className={heading}>
-          <SectionTag title="Trusted by Our Users" tagclass="hidden" />
-          <h2 className="text-[#E1E7F5] pt-4">What Our Users Are Saying</h2>
+        {/* HEADER */}
+        <div className="common_heading !font-suisseintl !font-medium">
+          <SectionTag
+            className="!py-2"
+            title="Trusted by Our Users"
+            tagclass="hidden"
+          />
+          <h2 className="text-[#E1E7F5] tracking-[-1.60px] text-[36px] md:text-[45px] lg:text-[56px] leading-[100%] text-center font-medium mt-8 tracking-[-2px]">
+            What Our Users Are Saying
+          </h2>
         </div>
-        <p className={para}>
+        <p className="text-lg leading-[150%] mt-5 mx-auto text-[#AEB4C3] tracking-[-1px] font-medium max-w-[560px] w-full !font-geist">
           Lorem ipsum dolor sit amet consectetur. Etiam risus adipiscing etiam
           pellentesque. Lorem mauris convallis pretium imperdiet. At lorem.
         </p>
 
-        {/* Testimonials */}
-        <div className="grid md:grid-cols-3 gap-6 md:gap-3 lg:gap-8 relative mt-6 md:mt-20">
-          {testimonials.map((item, idx) => (
-            <div
-              key={idx}
-              className={`
-                group rounded-[12px] overflow-hidden relative z-10 
-                w-full max-w-[372px] mx-auto 
-                h-[210px] cursor-pointer hover:max-w-[428px] hover:[256px]
-                transition transform duration-500 
-                hover:scale-[1.15] 
-                ${
-                  item.highlighted
-                    ? "transform md:scale-100 text-white"
-                    : "text-[#D8DFF0B8]"
-                }
-              `}
-            >
-              <div
-                className={`relative h-full rounded-[12px] transition-all duration-300
-          ${
-            item.highlighted
-              ? ""
-              : "border border-[#44436285] group-hover:border-transparent"
-          }
-        `}
-                style={{
-                  ...(item.highlighted
-                    ? {
-                        background:
-                          "linear-gradient(91.18deg, rgba(240, 169, 211, 0.5) 0%, rgba(249, 222, 227, 0.5) 49.52%, rgba(150, 145, 242, 0.5) 100%)",
-                        padding: "1px",
-                        boxShadow:
-                          "0px 0px 0px 1px #1B1A22, 0px 8px 8px 0px rgba(163, 126, 242, 0.16)",
-                      }
-                    : { boxShadow: "0px 0px 0px 1px #1B1A22" }),
-                }}
-              >
-                {!item.highlighted && (
+        {/* SWIPER SLIDER */}
+        <div className="relative">
+          <Swiper
+            modules={[Pagination]}
+            pagination={false}
+            spaceBetween={50}
+            slidesPerView={1.2}
+            centeredSlides={true}
+            loop={true}
+            // HELP IN CENTERMODE DURING PAGINATION OR ICONS HANDLING
+            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
+            breakpoints={{
+              500: { slidesPerView: 1, centeredSlides: true },
+              768: { slidesPerView: 2, centeredSlides: true },
+              1024: { slidesPerView: 3, centeredSlides: true },
+            }}
+            className="mySwiper"
+          >
+            {testimonials.map((item, idx) => (
+              <SwiperSlide key={idx}>
+                {/* SLIDES */}
+                <div
+                  className={`group rounded-[12px] overflow-hidden relative z-10 cursor-pointer h-[210px] ${
+                    idx === activeIndex
+                      ? "transform md:scale-100 text-white"
+                      : "text-[#D8DFF0B8]"
+                  }`}
+                >
                   <div
-                    className="absolute inset-0 rounded-[12px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className={`relative h-full rounded-[12px] transition-all duration-300 ${
+                      item.highlighted ? "" : "border border-[#44436285]"
+                    }`}
                     style={{
-                      background:
-                        "linear-gradient(91.18deg, rgba(240, 169, 211, 0.5) 0%, rgba(249, 222, 227, 0.5) 49.52%, rgba(150, 145, 242, 0.5) 100%)",
-                      padding: "1px",
-                      zIndex: 1,
+                      ...(idx === activeIndex
+                        ? {
+                            background:
+                              "linear-gradient(91.18deg, rgba(240, 169, 211, 0.5) 0%, rgba(249, 222, 227, 0.5) 49.52%, rgba(150, 145, 242, 0.5) 100%)",
+                            padding: "1px",
+                            boxShadow:
+                              "0px 0px 0px 1px #1B1A22, 0px 8px 8px 0px rgba(163, 126, 242, 0.16)",
+                          }
+                        : { boxShadow: "0px 0px 0px 1px #1B1A22" }),
                     }}
-                  />
-                )}
-
-                <div className="bg-[#121218] h-full rounded-[12px] px-4 md:px-2 lg:px-4 py-6 md:py-2 lg:py-6 flex flex-col relative z-10">
-                  <p className=" !font-geist text-sm mb-3 lg:mb-6 flex-grow text-left">
-                    {item.content}
-                  </p>
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-1 lg:gap-3">
-                      <div className="w-8 h-8 rounded-full bg-gray-600 overflow-hidden flex items-center justify-center">
+                  >
+                    {idx == activeIndex && (
+                      <div
+                        className="absolute inset-0 rounded-[12px] pointer-events-none transition-opacity duration-300"
+                        style={{
+                          background:
+                            "linear-gradient(91.18deg, rgba(240, 169, 211, 0.5) 0%, rgba(249, 222, 227, 0.5) 49.52%, rgba(150, 145, 242, 0.5) 100%)",
+                          padding: "1px",
+                          zIndex: 1,
+                        }}
+                      />
+                    )}
+                    <div
+                      className={`${idx !== activeIndex && "border-[#44436285] border shadow-[0px_0px_0px_1px_#1B1A22]"} h-full rounded-[12px] px-4 md:px-2 lg:px-4 py-6 md:py-2 lg:py-6 flex flex-col relative z-10`}
+                      style={{
+                        background:
+                          "linear-gradient(0deg, #070707 0%, #14131A 100%)",
+                      }}
+                    >
+                      <p
+                        className={`${
+                          idx === activeIndex && "!text-[#C9D3E8] text-lg"
+                        } leading-[145%] !font-geist text-sm mb-3 xl:mb-11 lg:mb-6 flex-grow text-left`}
+                      >
+                        {item.content}
+                      </p>
+                      <div className="flex justify-between items-center h-fit">
+                        <div className="flex items-center gap-1 lg:gap-3">
+                          <div className="w-8 h-8 rounded-full bg-gray-600 overflow-hidden flex items-center justify-center">
+                            <Image
+                              src={item.profile}
+                              alt={item.name}
+                              width={32}
+                              height={32}
+                            />
+                          </div>
+                          <div>
+                            <p className="!font-geist font-semibold text-sm text-left">
+                              {item.name}
+                            </p>
+                            <p className="text-xs text-[#A8A8A9] !font-geist">
+                              {item.role}
+                            </p>
+                          </div>
+                        </div>
                         <Image
-                          src={item.profile}
-                          alt={item.name}
-                          width={32}
-                          height={32}
+                          src={item.companyLogo}
+                          alt={item.role}
+                          width={90}
+                          height={30}
+                          className={
+                            item.highlighted
+                              ? "w-[60px] h-[20px] lg:w-[90px] lg:h-[30px]"
+                              : "w-[60px] h-[20px]"
+                          }
                         />
                       </div>
-                      <div>
-                        <p className=" !font-geist font-semibold text-sm text-left">
-                          {item.name}
-                        </p>
-                        <p className="text-xs text-[#A8A8A9]  !font-geist">
-                          {item.role}
-                        </p>
-                      </div>
+                      {idx == activeIndex && (
+                        <div
+                          className="left-[188px] max-xl:hidden -top-[75px] rotate-90 relative z-50"
+                          style={{
+                            background:
+                              "linear-gradient(90deg, rgba(39, 39, 63, 0) 0.03%, rgba(48, 54, 147, 0.5) 28.15%, #4048B9 51.05%, rgba(48, 54, 147, 0.5) 74.48%, rgba(33, 33, 55, 0) 100%)",
+                            padding: "1px",
+                            zIndex: 1,
+                          }}
+                        ></div>
+                      )}
                     </div>
-                    <Image
-                      src={item.companyLogo}
-                      alt={item.role}
-                      width={90} // Always set max width for Next.js optimization
-                      height={30} // Always set max height for Next.js optimization
-                      className={
-                        item.highlighted
-                          ? "w-[60px] h-[20px] lg:w-[90px] lg:h-[30px]"
-                          : "w-[60px] h-[20px]"
-                      }
-                    />
                   </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
-          {/* Blur shadows */}
+          {/* BACKGROUND GRADIENTS */}
           <img
             src="/images/svg/testimonial-blur-shadow-1.svg"
             alt="shadow-blur"
-            className="absolute z-0 right-60 transform -translate-y-0.5"
+            className="absolute right-60 top-[96px] right-[250px] transform -translate-y-0.5"
           />
           <img
             src="/images/svg/testimonial-blur-shadow-2.svg"
             alt="shadow-blur"
-            className="absolute z-0 right-80 transform -translate-y-1"
+            className="absolute top-[96px] right-[250px] transform -translate-y-1"
           />
           <img
             src="/images/svg/testimonial-blur-shadow-3.svg"
             alt="shadow-blur"
-            className="absolute z-0 right-130 transform -translate-y-2/5"
+            className="absolute z-0 top-[42px] left-[221px] pointer-event-none transform -translate-y-2/5"
           />
         </div>
 
-        <p className="text-base md:text-lg text-[#838AA3] mt-14 mb-6  !font-geist">
+        <p className="text-base md:text-lg text-[#838AA3] mb-6 lg:mb-11 !font-geist">
           The world's best user plan with Moviegen
         </p>
 
-        {/* X/Twitter Pagination with Gradient Border */}
-        <div className="flex md:flex-row justify-center gap-3 md:gap-8 items-center">
-          {Array.from({ length: 9 }).map((_, i) => {
-            // On mobile, only show icons 3, 4, and 5 (the middle one and its neighbors)
-            const showOnMobile = i >= 3 && i <= 5;
+        {/* PAGINATION */}
+        <div className="hidden sm:flex md:flex-row relative z-10 justify-center gap-3 md:gap-8 items-center pb-8 flex-wrap">
+          {testimonials.map((obj, index) => {
+            const isActive = index === activeIndex;
             return (
               <div
-                key={i}
-                className={`${
-                  i === 4
-                    ? "p-10 flex items-center justify-center relative cursor-pointer"
-                    : "flex items-center justify-center cursor-pointer"
-                } ${
-                  !showOnMobile ? "hidden md:flex" : ""
-                } transition-transform duration-300 hover:scale-110`}
+                key={index}
+                onClick={() => handleIconClick(index)}
+                className={`cursor-pointer transition-transform duration-300`}
               >
-                {i === 4 ? (
-                  <div
-                    className="absolute inset-0 rounded-full"
-                    style={{
-                      background:
-                        "linear-gradient(91.18deg, rgba(240, 169, 211, 0.5) 0%, rgba(249, 222, 227, 0.5) 49.52%, rgba(150, 145, 242, 0.5) 100%)",
-                      padding: "1px",
-                      boxShadow:
-                        "0px 0px 0px 1px #1B1A22, 0px 8px 8px 0px rgba(163, 126, 242, 0.16)",
-                    }}
-                  >
-                    <div className="w-full h-full rounded-full bg-[#121218] flex items-center justify-center">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 38 36"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="z-10"
-                      >
-                        <path
-                          d="M0.133767 0.500488L14.7729 19.8053L0.0415035 35.5005L3.35722 35.5005L16.2549 21.7588L26.6754 35.5005L37.9582 35.5005L22.495 15.1101L36.2071 0.500489L32.8914 0.500489L21.0137 13.1559L11.4165 0.500488L0.133767 0.500488ZM5.00967 2.90959L10.1929 2.90959L33.0816 33.092L27.8984 33.092L5.00967 2.90959Z"
-                          fill="white"
-                        />
-                      </svg>
-                    </div>
+                <div
+                  className={`${
+                    isActive && "scale-110 lg:scale-[1.6667]"
+                  } relative !border-[#27262C] p-px rounded-full flex items-center justify-center duration-300`}
+                  style={
+                    isActive
+                      ? {
+                          background:
+                            "linear-gradient(91.18deg, rgba(240, 169, 211, 0.5) 0%, rgba(249, 222, 227, 0.5) 49.52%, rgba(150, 145, 242, 0.5) 100%)",
+                          boxShadow:
+                            "0px 0px 0px 1px #1B1A22, 0px 8px 8px 0px rgba(163, 126, 242, 0.16)",
+                        }
+                      : {}
+                  }
+                >
+                  <div className="size-8 lg:size-12 border-[#2F2E34] border rounded-full bg-[#14131A] flex items-center justify-center">
+                    {obj.icon}
                   </div>
-                ) : (
-                  <div
-                    className="p-4 rounded-full border border-[#44436285] flex items-center justify-center"
-                    style={{ boxShadow: "0px 0px 0px 1px #1B1A22" }}
-                  >
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 38 36"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="z-10"
-                    >
-                      <path
-                        d="M0.133767 0.500488L14.7729 19.8053L0.0415035 35.5005L3.35722 35.5005L16.2549 21.7588L26.6754 35.5005L37.9582 35.5005L22.495 15.1101L36.2071 0.500489L32.8914 0.500489L21.0137 13.1559L11.4165 0.500488L0.133767 0.500488ZM5.00967 2.90959L10.1929 2.90959L33.0816 33.092L27.8984 33.092L5.00967 2.90959Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </div>
-                )}
+                </div>
               </div>
             );
           })}

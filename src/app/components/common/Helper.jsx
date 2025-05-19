@@ -1,3 +1,5 @@
+import { X } from "./Icons";
+
 export const navList = [
   { title: "Home", url: "/" },
   {
@@ -24,4 +26,89 @@ export const navLinks = [
   { name: "Pricing", href: "#" },
   { name: "Articles", href: "#" },
   { name: "Contact Us", href: "#" },
+];
+
+export const testimonials = [
+  {
+    name: "Floyd Miles",
+    icon: <X />,
+    role: "Founder at Wise",
+    companyLogo: "/images/svg/wise-logo.svg",
+    profile: "/images/svg/testimonial-profile.svg",
+    content:
+      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
+  },
+  {
+    name: "Floyd Miles",
+    icon: <X />,
+    role: "Founder at Revolut",
+    companyLogo: "/images/svg/revolut-logo.svg",
+    profile: "/images/svg/testimonial-profile.svg",
+    highlighted: true,
+    content:
+      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
+  },
+  {
+    name: "Floyd Miles",
+    icon: <X />,
+    role: "Founder at Wise",
+    companyLogo: "/images/svg/wise-logo.svg",
+    profile: "/images/svg/testimonial-profile.svg",
+    content:
+      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
+  },
+  {
+    name: "Floyd Miles",
+    icon: <X />,
+    role: "Founder at Wise",
+    companyLogo: "/images/svg/wise-logo.svg",
+    profile: "/images/svg/testimonial-profile.svg",
+    content:
+      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
+  },
+  {
+    name: "Floyd Miles",
+    icon: <X />,
+    role: "Founder at Wise",
+    companyLogo: "/images/svg/wise-logo.svg",
+    profile: "/images/svg/testimonial-profile.svg",
+    content:
+      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
+  },
+  {
+    name: "Floyd Miles",
+    icon: <X />,
+    role: "Founder at Wise",
+    companyLogo: "/images/svg/wise-logo.svg",
+    profile: "/images/svg/testimonial-profile.svg",
+    content:
+      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
+  },
+  {
+    name: "Floyd Miles",
+    icon: <X />,
+    role: "Founder at Wise",
+    companyLogo: "/images/svg/wise-logo.svg",
+    profile: "/images/svg/testimonial-profile.svg",
+    content:
+      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
+  },
+  {
+    name: "Floyd Miles",
+    icon: <X />,
+    role: "Founder at Wise",
+    companyLogo: "/images/svg/wise-logo.svg",
+    profile: "/images/svg/testimonial-profile.svg",
+    content:
+      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
+  },
+  {
+    name: "Floyd Miles",
+    role: "Founder at Wise",
+    icon: <X />,
+    companyLogo: "/images/svg/wise-logo.svg",
+    profile: "/images/svg/testimonial-profile.svg",
+    content:
+      "Lorem ipsum dolor sit amet consectetur. Cras in sit est netus accumsan. Facilisi elit justo iacinia sapien elementum interdum sodales. Mauris non quisque mollis tempor. Elit.",
+  },
 ];

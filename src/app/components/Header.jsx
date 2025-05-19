@@ -132,11 +132,11 @@ const Header = () => {
               </div>
             </div>
             <div className="text-base font-medium font-geist bg-primary  shadow-[#a37ef229] shadow-[0_10px_10px_rgba(163_126_242_0.16)] border border-lightpurple44  p-1 rounded-[12px] cursor-pointer hidden lg:flex">
-              <button className="text-grayd8 px-5 cursor-pointer border-none">
+              <button className="text-grayd8 px-5 cursor-pointer border-none duration-300 hover:text-[#CD4FF6]">
                 Sign In
               </button>
-              <button className="px-[18px] py-3.5 primary_gradient border border-white rounded-[8px] cursor-pointer">
-                Join Waitlist
+              <button className="px-[18px] h-11 common-button">
+                <span>Join Waitlist</span>
               </button>
             </div>
             <button className="lg:hidden" onClick={toggleOpen}>
